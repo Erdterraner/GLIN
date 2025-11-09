@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morris - Portfolio</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <!-- Main Navigation -->
+    <nav class="main-nav">
+        <div class="logo">B&M</div>
+        <ul class="nav-links">
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="bo_portfolio.html">Bo</a></li>
+            <li><a href="morris_portfolio.html" class="active">Morris</a></li>
+        </ul>
+    </nav>
+
+    <div class="portfolio-page active">
+        <div class="portfolio-nav">
+            <a href="../../index.html" style="margin-right: auto;">← Back to Home</a>
+            <a href="#morris-about" class="active">About</a>
+            <a href="#morris-skills">Skills</a>
+            <a href="#morris-gallery">Gallery</a>
+            <a href="#morris-hobby">Hobby</a>
+        </div>
+
+        <div class="portfolio-content">
+            <div class="profile-header" id="morris-about">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop" alt="Morris" class="profile-img">
+                <h1>Morris</h1>
+                <p class="profile-tagline">Photographer & Visual Artist</p>
+                <div class="social-links">
+                    <a href="#" class="social-btn">Instagram</a>
+                    <a href="#" class="social-btn">Behance</a>
+                    <a href="#" class="social-btn">500px</a>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>About Me</h2>
+                <p>Hello! I'm Morris, a photographer and visual artist passionate about capturing the world through my lens. With a keen eye for detail and a love for storytelling, I specialize in portrait, landscape, and documentary photography.</p>
+                <p style="margin-top: 20px;">Every photograph I take is a story waiting to be told. I believe in the power of visual narratives to evoke emotions, preserve memories, and inspire change. My work has been featured in various exhibitions and publications worldwide.</p>
+            </div>
+
+            <div class="section" id="morris-skills">
+                <h2>Skills & Expertise</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <h3>Photography</h3>
+                        <div class="skill-list">
+                            <span class="skill-tag">Portrait</span>
+                            <span class="skill-tag">Landscape</span>
+                            <span class="skill-tag">Documentary</span>
+                            <span class="skill-tag">Commercial</span>
+                            <span class="skill-tag">Event</span>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Post-Processing</h3>
+                        <div class="skill-list">
+                            <span class="skill-tag">Lightroom</span>
+                            <span class="skill-tag">Photoshop</span>
+                            <span class="skill-tag">Capture One</span>
+                            <span class="skill-tag">Color Grading</span>
+                            <span class="skill-tag">Retouching</span>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Creative</h3>
+                        <div class="skill-list">
+                            <span class="skill-tag">Digital Art</span>
+                            <span class="skill-tag">Composition</span>
+                            <span class="skill-tag">Lighting</span>
+                            <span class="skill-tag">Storytelling</span>
+                            <span class="skill-tag">Visual Design</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section" id="morris-gallery">
+                <h2>Photography Portfolio</h2>
+                <div class="photo-categories">
+                    <button class="category-btn active" onclick="filterGallery('all')">All</button>
+                    <button class="category-btn" onclick="filterGallery('portrait')">Portrait</button>
+                    <button class="category-btn" onclick="filterGallery('landscape')">Landscape</button>
+                    <button class="category-btn" onclick="filterGallery('urban')">Urban</button>
+                </div>
+                <div class="photo-gallery">
+                    <div class="photo-item" data-category="portrait">
+                        <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=600&h=800&fit=crop" alt="Portrait 1">
+                        <div class="photo-overlay">
+                            <h4>Urban Portrait</h4>
+                            <p>City Streets Series</p>
+                        </div>
+                    </div>
+                    <div class="photo-item" data-category="landscape">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop" alt="Landscape 1">
+                        <div class="photo-overlay">
+                            <h4>Mountain Range</h4>
+                            <p>Nature Collection</p>
+                        </div>
+                    </div>
+                    <div class="photo-item" data-category="urban">
+                        <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=600&h=600&fit=crop" alt="Urban 1">
+                        <div class="photo-overlay">
+                            <h4>City Lights</h4>
+                            <p>Urban Exploration</p>
+                        </div>
+                    </div>
+                    <div class="photo-item" data-category="portrait">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&h=800&fit=crop" alt="Portrait 2">
+                        <div class="photo-overlay">
+                            <h4>Natural Light</h4>
+                            <p>Portrait Series</p>
+                        </div>
+                    </div>
+                    <div class="photo-item" data-category="landscape">
+                        <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=600&h=400&fit=crop" alt="Landscape 2">
+                        <div class="photo-overlay">
+                            <h4>Forest Mist</h4>
+                            <p>Nature Collection</p>
+                        </div>
+                    </div>
+                    <div class="photo-item" data-category="urban">
+                        <img src="https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=600&h=600&fit=crop" alt="Urban 2">
+                        <div class="photo-overlay">
+                            <h4>Architecture</h4>
+                            <p>Modern Structures</p>
+                        </div>
+                    </div>
+                    <div class="photo-item" data-category="portrait">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=800&fit=crop" alt="Portrait 3">
+                        <div class="photo-overlay">
+                            <h4>Golden Hour</h4>
+                            <p>Portrait Series</p>
+                        </div>
+                    </div>
+                    <div class="photo-item" data-category="landscape">
+                        <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&h=400&fit=crop" alt="Landscape 3">
+                        <div class="photo-overlay">
+                            <h4>Wilderness</h4>
+                            <p>Nature Collection</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section" id="morris-hobby">
+                <h2>My Hobby: Digital Art</h2>
+                <p>In my free time, I create digital art and illustrations, blending photography with digital painting techniques. It's a wonderful way to express creativity without the constraints of reality.</p>
+                
+                <div class="hobby-interactive">
+                    <h3 style="margin-bottom: 20px;">🎨 Digital Art Collection</h3>
+                    <div class="upload-area" onclick="document.getElementById('morris-upload').click()">
+                        <input type="file" id="morris-upload" accept="image/*" onchange="handleUpload(event, 'morris')">
+                        <p style="color: #888; margin-bottom: 20px;">Share your artwork with me! Click to upload or drag and drop</p>
+                        <button class="upload-btn">Choose File</button>
+                    </div>
+                    
+                    <div id="morris-gallery" class="hobby-gallery">
+                        <div class="hobby-item">
+                            <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=400&h=400&fit=crop" alt="Abstract art">
+                            <div class="hobby-item-overlay">
+                                <p>Abstract Dreams</p>
+                            </div>
+                        </div>
+                        <div class="hobby-item">
+                            <img src="https://images.unsplash.com/photo-1534361960057-19889db9621e?w=400&h=400&fit=crop" alt="Digital painting">
+                            <div class="hobby-item-overlay">
+                                <p>Digital Painting</p>
+                            </div>
+                        </div>
+                        <div class="hobby-item">
+                            <img src="https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?w=400&h=400&fit=crop" alt="Mixed media">
+                            <div class="hobby-item-overlay">
+                                <p>Mixed Media</p>
+                            </div>
+                        </div>
+                        <div class="hobby-item">
+                            <img src="https://images.unsplash.com/photo-1547891654-e66ed7ebb968?w=400&h=400&fit=crop" alt="Surreal art">
+                            <div class="hobby-item-overlay">
+                                <p>Surreal Landscapes</p>
+                            </div>
+                        </div>
+                        <div class="hobby-item">
+                            <img src="https://images.unsplash.com/photo-1557672172-298e090bd0f1?w=400&h=400&fit=crop" alt="Abstract colors">
+                            <div class="hobby-item-overlay">
+                                <p>Color Exploration</p>
+                            </div>
+                        </div>
+                        <div class="hobby-item">
+                            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=400&h=400&fit=crop" alt="Digital composition">
+                            <div class="hobby-item-overlay">
+                                <p>Digital Composition</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Book a Session</h2>
+                <p>Looking for a photographer for your next project? Whether it's a portrait session, event coverage, or commercial work, I'd love to hear from you and bring your vision to life.</p>
+                <a href="mailto:morris@example.com" class="contact-btn">Contact Me</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="../scripts.js"></script>
+</body>
+</html>

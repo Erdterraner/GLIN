@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bo & Morris Portfolio</title>
+    <link rel="stylesheet" href="src/styles.css">
+</head>
+
+<body>
+    <!-- Main Navigation -->
+    <nav class="main-nav">
+        <div class="logo">B&M</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="src/pages/bo_portfolio.html">Bo</a></li>
+            <li><a href="src/pages/morris_portfolio.html">Morris</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Video Section -->
+    <section class="hero-section">
+        <div class="video-container">
+            <video class="hero-video active" muted loop autoplay>
+                <source src="src/videos/hero_video1.mp4" type="video/mp4">
+            </video>
+            <video class="hero-video" muted loop>
+                <source src="src/videos/hero_video2.mp4" type="video/mp4">
+            </video>
+            <video class="hero-video" muted loop>
+                <source src="src/videos/hero_video3.mp4" type="video/mp4">
+            </video>
+
+            <div class="video-overlay">
+                <h1 class="video-title">Welcome to Our Portfolio</h1>
+                <p class="video-description">Discover the creative work and passions of Bo and Morris</p>
+
+                <div class="video-controls">
+                    <button class="play-pause-btn" onclick="togglePlayPause()">
+                        <svg width="20" height="20" viewBox="0 0 20 20" id="play-icon">
+                            <path d="M5 3l12 7-12 7z" fill="#000" />
+                        </svg>
+                        <svg width="20" height="20" viewBox="0 0 20 20" id="pause-icon" style="display:none;">
+                            <path d="M6 3h3v14H6zm5 0h3v14h-3z" fill="#000" />
+                        </svg>
+                    </button>
+                    <div class="video-dots">
+                        <span class="dot active" onclick="changeVideo(0)"></span>
+                        <span class="dot" onclick="changeVideo(1)"></span>
+                        <span class="dot" onclick="changeVideo(2)"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About Section -->
+    <section class="home-about">
+        <div class="about-content">
+            <h2>About Us</h2>
+            <p>Hey there! We’re Bo and Morris, just two classmates who enjoy mixing our different skills and interests.
+                This project is a way for us to share a bit of who we are and what we like to do.</p>
+
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="about-icon">💻</div>
+                    <h3>Bo</h3>
+                    <p>I’m the techie of the team. I like coding, problem-solving, and tinkering with new tools and
+                        ideas.</p>
+                </div>
+
+                <div class="about-card">
+                    <div class="about-icon">🎨</div>
+                    <h3>Morris</h3>
+                    <p>I’m more into the creative side. I enjoy design, storytelling, and finding ways to make things
+                        look and feel fun.</p>
+                </div>
+
+                <div class="about-card">
+                    <div class="about-icon">🚀</div>
+                    <h3>Together</h3>
+                    <p>We combine what we’re each good at to make projects that reflect both of us — a mix of tech and
+                        creativity.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Portfolio Preview Grid -->
+    <section class="portfolio-preview">
+        <h2>Meet Our Team</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-card" onclick="location.href='src/pages/bo_portfolio.html'">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=1000&fit=crop" alt="Bo">
+                <div class="card-overlay">
+                    <h2 class="card-title">Bo</h2>
+                    <p class="card-subtitle">Creative Designer & Developer</p>
+                    <p class="card-description">Specializing in dental CAD/CAM and web development</p>
+                </div>
+            </div>
+            <div class="portfolio-card" onclick="location.href='src/pages/morris_portfolio.html'">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&h=1000&fit=crop"
+                    alt="Morris">
+                <div class="card-overlay">
+                    <h2 class="card-title">Morris</h2>
+                    <p class="card-subtitle">Photographer & Artist</p>
+                    <p class="card-description">Capturing moments and creating digital masterpieces</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <div class="logo">B&M</div>
+                <p>Creating exceptional digital experiences</p>
+            </div>
+            <div class="footer-right">
+                <div class="footer-links">
+                    <a href="src/pages/bo_portfolio.html">Bo</a>
+                    <a href="src/pages/morris_portfolio.html">Morris</a>
+                </div>
+                <p class="copyright">© 2025 Bo & Morris Portfolio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="src/script.js"></script>
+</body>
+
+</html>

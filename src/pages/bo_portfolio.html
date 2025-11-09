@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bo - Portfolio</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <!-- Main Navigation -->
+    <nav class="main-nav">
+        <div class="logo">B&M</div>
+        <ul class="nav-links">
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="bo_portfolio.html" class="active">Bo</a></li>
+            <li><a href="morris_portfolio.html">Morris</a></li>
+        </ul>
+    </nav>
+
+    <div class="portfolio-page active">
+        <div class="portfolio-nav">
+            <a href="../../index.html" style="margin-right: auto;">← Back to Home</a>
+            <a href="#bo-about" class="active">About</a>
+            <a href="#bo-skills">Skills</a>
+            <a href="#bo-projects">Projects</a>
+            <a href="#bo-hobby">Hobby</a>
+        </div>
+
+        <div class="portfolio-content">
+            <div class="profile-header" id="bo-about">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop" alt="Bo" class="profile-img">
+                <h1>Bo</h1>
+                <p class="profile-tagline">Dental CAD/CAM Specialist & Web Developer</p>
+                <div class="social-links">
+                    <a href="#" class="social-btn">LinkedIn</a>
+                    <a href="#" class="social-btn">GitHub</a>
+                    <a href="#" class="social-btn">Dribbble</a>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>About Me</h2>
+                <p>Hi! I'm Bo, a specialized dental CAD/CAM technician working with Ivoclar Vivadent, one of the world's leading dental companies. I combine precision dental design with cutting-edge 3D printing technology to create perfect dental restorations.</p>
+                <p style="margin-top: 20px;">Beyond the dental lab, I'm passionate about web development and creating beautiful digital experiences. My technical background in dental CAD software translates perfectly into meticulous attention to detail in every project I undertake.</p>
+            </div>
+
+            <div class="section" id="bo-skills">
+                <h2>Skills & Expertise</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <h3>Dental CAD/CAM</h3>
+                        <div class="skill-list">
+                            <span class="skill-tag">Ivoclar Software</span>
+                            <span class="skill-tag">3D Printing</span>
+                            <span class="skill-tag">Dental Design</span>
+                            <span class="skill-tag">PrograMill</span>
+                            <span class="skill-tag">IPS e.max</span>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Design</h3>
+                        <div class="skill-list">
+                            <span class="skill-tag">UI/UX Design</span>
+                            <span class="skill-tag">Figma</span>
+                            <span class="skill-tag">Adobe XD</span>
+                            <span class="skill-tag">Photoshop</span>
+                            <span class="skill-tag">3D Modeling</span>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Development</h3>
+                        <div class="skill-list">
+                            <span class="skill-tag">HTML/CSS</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">Three.js</span>
+                            <span class="skill-tag">Node.js</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section" id="bo-projects">
+                <h2>Featured Projects</h2>
+                
+                <!-- 3D Tooth Model Project -->
+                <div class="featured-project">
+                    <div class="project-header">
+                        <h3>🦷 Interactive 3D Dental Crown Model</h3>
+                        <p>Ivoclar Vivadent CAD/CAM Project</p>
+                    </div>
+                    <div class="tooth-3d-container">
+                        <div id="tooth-canvas"></div>
+                        <div class="tooth-controls">
+                            <button onclick="rotateTooth('left')" class="control-btn">← Left</button>
+                            <button onclick="rotateTooth('up')" class="control-btn">↑ Up</button>
+                            <button onclick="rotateTooth('down')" class="control-btn">↓ Down</button>
+                            <button onclick="rotateTooth('right')" class="control-btn">Right →</button>
+                            <button onclick="resetToothView()" class="control-btn">🔄 Reset</button>
+                        </div>
+                    </div>
+                    <div class="project-details">
+                        <h4>Project Details</h4>
+                        <p>This precision dental crown was designed using Ivoclar Vivadent's advanced CAD/CAM software and manufactured with their state-of-the-art milling system. The design ensures perfect occlusion, natural aesthetics, and long-lasting durability.</p>
+                        <div class="project-specs">
+                            <div class="spec-item">
+                                <strong>Material:</strong> IPS e.max CAD
+                            </div>
+                            <div class="spec-item">
+                                <strong>Technology:</strong> PrograMill PM7
+                            </div>
+                            <div class="spec-item">
+                                <strong>Software:</strong> Ivoclar Digital Suite
+                            </div>
+                            <div class="spec-item">
+                                <strong>Production Time:</strong> 45 minutes
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Other Projects -->
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=600&h=400&fit=crop" alt="Dental Lab">
+                        </div>
+                        <div class="project-info">
+                            <h3>Dental Laboratory Dashboard</h3>
+                            <p>A comprehensive management system for dental labs to track orders, manage materials, and optimize workflow efficiency.</p>
+                            <div class="project-tags">
+                                <span>React</span>
+                                <span>Node.js</span>
+                                <span>Ivoclar API</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop" alt="E-Commerce">
+                        </div>
+                        <div class="project-info">
+                            <h3>E-Commerce Platform</h3>
+                            <p>A modern, responsive online shopping experience with seamless checkout and inventory management.</p>
+                            <div class="project-tags">
+                                <span>React</span>
+                                <span>MongoDB</span>
+                                <span>Stripe</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=600&h=400&fit=crop" alt="Task App">
+                        </div>
+                        <div class="project-info">
+                            <h3>Task Management App</h3>
+                            <p>An intuitive productivity tool with drag-and-drop functionality and real-time collaboration features.</p>
+                            <div class="project-tags">
+                                <span>Vue.js</span>
+                                <span>Firebase</span>
+                                <span>CSS3</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section" id="bo-hobby">
+                <h2>My Hobby: Photography</h2>
+                <p>When I'm not designing dental restorations or coding, I love capturing moments through photography. Landscape and urban photography are my passions, and I'm always exploring new locations to shoot.</p>
+                
+                <div class="hobby-interactive">
+                    <h3 style="margin-bottom: 20px;">📸 Photography Gallery</h3>
+                    <div class="upload-area" onclick="document.getElementById('bo-upload').click()">
+                        <input type="file" id="bo-upload" accept="image/*" onchange="handleUpload(event, 'bo')">
+                        <p style="color: #888; margin-bottom: 20px;">Share your photos with me! Click to upload or drag and drop</p>
+                        <button class="upload-btn">Choose File</button>
+                    </div>
+                    
+                    <div id="bo-gallery" class="hobby-gallery">
+                        <div class="hobby-item">
+                            <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?w=400&h=400&fit=crop" alt="Mountain landscape">
+                            <div class="hobby-item-overlay">
+                                <p>Mountain Vista</p>
+                            </div>
+                        </div>
+                        <div class="hobby-item">
+                            <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=400&h=400&fit=crop" alt="Forest path">
+                            <div class="hobby-item-overlay">
+                                <p>Forest Path</p>
+                            </div>
+                        </div>
+                        <div class="hobby-item">
+                            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=400&fit=crop" alt="Coastal sunset">
+                            <div class="hobby-item-overlay">
+                                <p>Coastal Sunset</p>
+                            </div>
+                        </div>
+                        <div class="hobby-item">
+                            <img src="https://images.unsplash.com/photo-1511593358241-7eea1f3c84e5?w=400&h=400&fit=crop" alt="Urban architecture">
+                            <div class="hobby-item-overlay">
+                                <p>Urban Architecture</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Let's Connect</h2>
+                <p>Interested in dental CAD/CAM services or web development? I'm always open to discussing new projects, whether it's precision dental work or creating innovative digital solutions.</p>
+                <a href="mailto:bo@example.com" class="contact-btn">Get In Touch</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="../scripts.js"></script>
+    <script>
+        // 3D Tooth Model with realistic rendering
+        let toothScene, toothCamera, toothRenderer, toothMesh;
+        let controls = { rotationX: 0, rotationY: 0, isDragging: false };
+        let previousMouse = { x: 0, y: 0 };
+
+        function initTooth3D() {
+            const container = document.getElementById('tooth-canvas');
+            if (!container) return;
+
+            // Scene setup
+            toothScene = new THREE.Scene();
+            toothScene.background = new THREE.Color(0x0a0a0a);
+
+            // Camera
+            toothCamera = new THREE.PerspectiveCamera(50, container.clientWidth / 500, 0.1, 1000);
+            toothCamera.position.set(0, 0, 6);
+
+            // Renderer with antialiasing
+            toothRenderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+            toothRenderer.setSize(container.clientWidth, 500);
+            toothRenderer.setPixelRatio(window.devicePixelRatio);
+            toothRenderer.shadowMap.enabled = true;
+            toothRenderer.shadowMap.type = THREE.PCFSoftShadowMap;
+            container.appendChild(toothRenderer.domElement);
+
+            // Lighting setup for realistic tooth appearance
+            const ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
+            toothScene.add(ambientLight);
+
+            const mainLight = new THREE.DirectionalLight(0xffffff, 0.8);
+            mainLight.position.set(5, 8, 5);
+            mainLight.castShadow = true;
+            toothScene.add(mainLight);
+
+            const fillLight = new THREE.DirectionalLight(0xb3d9ff, 0.3);
+            fillLight.position.set(-5, 0, -5);
+            toothScene.add(fillLight);
+
+            const rimLight = new THREE.PointLight(0x88ccff, 0.6);
+            rimLight.position.set(0, 5, -5);
+            toothScene.add(rimLight);
+
+            // Create detailed tooth group
+            const toothGroup = new THREE.Group();
+
+            // Crown - main visible part with more anatomical shape
+            const crownGeometry = new THREE.SphereGeometry(1.2, 64, 64);
+            
+            // Modify vertices for more tooth-like shape
+            const positions = crownGeometry.attributes.position;
+            for (let i = 0; i < positions.count; i++) {
+                const x = positions.getX(i);
+                const y = positions.getY(i);
+                const z = positions.getZ(i);
+                
+                // Create cusps and grooves
+                const angle = Math.atan2(z, x);
+                const radius = Math.sqrt(x * x + z * z);
+                const cusp = Math.sin(angle * 4) * 0.1;
+                
+                positions.setX(i, x * (1 + cusp));
+                positions.setZ(i, z * (1 + cusp));
+                
+                // Taper towards bottom
+                if (y < 0) {
+                    const taper = 1 - Math.abs(y) * 0.3;
+                    positions.setX(i, x * taper);
+                    positions.setZ(i, z * taper);
+                }
+            }
+            crownGeometry.computeVertexNormals();
+
+            // Realistic tooth material
+            const crownMaterial = new THREE.MeshPhongMaterial({
+                color: 0xfaf8f3,
+                shininess: 120,
+                specular: 0xffffff,
+                reflectivity: 0.3,
+                emissive: 0x111111,
+            });
+
+            const crown = new THREE.Mesh(crownGeometry, crownMaterial);
+            crown.position.y = 0.8;
+            crown.castShadow = true;
+            crown.receiveShadow = true;
+            toothGroup.add(crown);
+
+            // Tooth neck (CEJ - Cemento-Enamel Junction)
+            const neckGeometry = new THREE.CylinderGeometry(0.7, 0.65, 0.4, 64);
+            const neckMaterial = new THREE.MeshPhongMaterial({
+                color: 0xf5f0e8,
+                shininess: 80,
+                specular: 0xcccccc,
+            });
+            const neck = new THREE.Mesh(neckGeometry, neckMaterial);
+            neck.position.y = 0;
+            neck.castShadow = true;
+            toothGroup.add(neck);
+
+            // Root - anatomically accurate
+            const rootGeometry = new THREE.CylinderGeometry(0.65, 0.35, 2.5, 64);
+            const rootPositions = rootGeometry.attributes.position;
+            
+            // Add slight curve to root
+            for (let i = 0; i < rootPositions.count; i++) {
+                const y = rootPositions.getY(i);
+                if (y < 0) {
+                    const curve = Math.pow(Math.abs(y) / 1.25, 1.5) * 0.15;
+                    const x = rootPositions.getX(i);
+                    rootPositions.setX(i, x + curve);
+                }
+            }
+            rootGeometry.computeVertexNormals();
+
+            const rootMaterial = new THREE.MeshPhongMaterial({
+                color: 0xf0e6d2,
+                shininess: 50,
+                specular: 0x999999,
+            });
+            const root = new THREE.Mesh(rootGeometry, rootMaterial);
+            root.position.y = -1.4;
+            root.castShadow = true;
+            toothGroup.add(root);
+
+            // Add occlusal surface details (cusps)
+            const cuspGeometry = new THREE.SphereGeometry(0.35, 32, 32);
+            const cuspPositions = [
+                { x: 0.4, y: 1.3, z: 0.4 },
+                { x: -0.4, y: 1.3, z: 0.4 },
+                { x: 0.4, y: 1.3, z: -0.4 },
+                { x: -0.4, y: 1.3, z: -0.4 },
+            ];
+
+            cuspPositions.forEach(pos => {
+                const cusp = new THREE.Mesh(cuspGeometry, crownMaterial);
+                cusp.position.set(pos.x, pos.y, pos.z);
+                cusp.scale.y = 0.6;
+                cusp.castShadow = true;
+                toothGroup.add(cusp);
+            });
+
+            // Central fissure
+            const fissureGeometry = new THREE.BoxGeometry(0.1, 0.15, 0.8);
+            const fissureMaterial = new THREE.MeshPhongMaterial({
+                color: 0xe8e0d5,
+                shininess: 60,
+            });
+            const fissure = new THREE.Mesh(fissureGeometry, fissureMaterial);
+            fissure.position.set(0, 1.35, 0);
+            toothGroup.add(fissure);
+
+            toothMesh = toothGroup;
+            toothScene.add(toothMesh);
+
+            // Ground plane for shadow
+            const planeGeometry = new THREE.PlaneGeometry(10, 10);
+            const planeMaterial = new THREE.ShadowMaterial({ opacity: 0.3 });
+            const plane = new THREE.Mesh(planeGeometry, planeMaterial);
+            plane.rotation.x = -Math.PI / 2;
+            plane.position.y = -2.5;
+            plane.receiveShadow = true;
+            toothScene.add(plane);
+
+            // Mouse interaction
+            container.addEventListener('mousedown', onMouseDown);
+            container.addEventListener('mousemove', onMouseMove);
+            container.addEventListener('mouseup', onMouseUp);
+            container.addEventListener('mouseleave', onMouseUp);
+            container.addEventListener('wheel', onWheel);
+
+            // Touch support
+            container.addEventListener('touchstart', onTouchStart);
+            container.addEventListener('touchmove', onTouchMove);
+            container.addEventListener('touchend', onTouchEnd);
+
+            animateTooth();
+        }
+
+        function onMouseDown(e) {
+            controls.isDragging = true;
+            previousMouse = { x: e.clientX, y: e.clientY };
+        }
+
+        function onMouseMove(e) {
+            if (!controls.isDragging) return;
+
+            const deltaX = e.clientX - previousMouse.x;
+            const deltaY = e.clientY - previousMouse.y;
+
+            controls.rotationY += deltaX * 0.005;
+            controls.rotationX += deltaY * 0.005;
+
+            // Limit vertical rotation
+            controls.rotationX = Math.max(-Math.PI / 2, Math.min(Math.PI / 2, controls.rotationX));
+
+            previousMouse = { x: e.clientX, y: e.clientY };
+        }
+
+        function onMouseUp() {
+            controls.isDragging = false;
+        }
+
+        function onWheel(e) {
+            e.preventDefault();
+            toothCamera.position.z += e.deltaY * 0.01;
+            toothCamera.position.z = Math.max(3, Math.min(12, toothCamera.position.z));
+        }
+
+        function onTouchStart(e) {
+            if (e.touches.length === 1) {
+                controls.isDragging = true;
+                previousMouse = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+            }
+        }
+
+        function onTouchMove(e) {
+            if (!controls.isDragging || e.touches.length !== 1) return;
+
+            const deltaX = e.touches[0].clientX - previousMouse.x;
+            const deltaY = e.touches[0].clientY - previousMouse.y;
+
+            controls.rotationY += deltaX * 0.005;
+            controls.rotationX += deltaY * 0.005;
+
+            controls.rotationX = Math.max(-Math.PI / 2, Math.min(Math.PI / 2, controls.rotationX));
+
+            previousMouse = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+        }
+
+        function onTouchEnd() {
+            controls.isDragging = false;
+        }
+
+        function animateTooth() {
+            requestAnimationFrame(animateTooth);
+
+            // Smooth rotation
+            toothMesh.rotation.x += (controls.rotationX - toothMesh.rotation.x) * 0.1;
+            toothMesh.rotation.y += (controls.rotationY - toothMesh.rotation.y) * 0.1;
+
+            // Gentle idle animation when not dragging
+            if (!controls.isDragging) {
+                toothMesh.rotation.y += 0.001;
+            }
+
+            toothRenderer.render(toothScene, toothCamera);
+        }
+
+        function rotateTooth(direction) {
+            if (direction === 'left') {
+                controls.rotationY -= 0.5;
+            } else if (direction === 'right') {
+                controls.rotationY += 0.5;
+            } else if (direction === 'up') {
+                controls.rotationX -= 0.3;
+            } else if (direction === 'down') {
+                controls.rotationX += 0.3;
+            }
+            controls.rotationX = Math.max(-Math.PI / 2, Math.min(Math.PI / 2, controls.rotationX));
+        }
+
+        function resetToothView() {
+            controls.rotationX = 0;
+            controls.rotationY = 0;
+            toothCamera.position.z = 6;
+        }
+
+        // Initialize on load
+        window.addEventListener('load', initTooth3D);
+        
+        // Handle resize
+        window.addEventListener('resize', () => {
+            const container = document.getElementById('tooth-canvas');
+            if (container && toothRenderer) {
+                toothRenderer.setSize(container.clientWidth, 500);
+                toothCamera.aspect = container.clientWidth / 500;
+                toothCamera.updateProjectionMatrix();
+            }
+        });
+    </script>
+</body>
+</html>
