@@ -261,26 +261,56 @@ height: 50px;
 }
 
 /* Social Links */
+
 .social-links {
     display: flex;
-    gap: 15px;
+    gap: 20px;
     justify-content: center;
+    margin-bottom: 40px;
 }
 
 .social-btn {
-    padding: 12px 30px;
-    background:#3a3a3a;
-    border: 2px solid #fa7203;
-    color: #f9f9f9;
-    text-decoration: none;
-    border-radius: 25px;
-    transition: all 0.3s;
-    font-size: 14px;
+    padding: 10px;
+    width: 44px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    border: none;
+    transition: filter 0.15s, transform 0.15s;
 }
 
 .social-btn:hover {
-    background: #0a0a0a;
-    color: #080808;
+    filter: brightness(0.9);
+    transform: translateY(-2px);
+}
+
+/* use currentColor inside SVGs (SVGs already use currentColor) */
+.social-btn svg { color: inherit; }
+
+/* Instagram (gradient) */
+.social-btn.instagram {
+    background: linear-gradient(45deg,#f58529 0%,#dd2a7b 35%,#8134af 65%,#515bd4 100%);
+    color: #fff;
+}
+
+/* LinkedIn */
+.social-btn.linkedin {
+    background: #0A66C2;
+    color: #fff;
+}
+
+/* Outlook / Mail */
+.social-btn.outlook {
+    background: #0078D4;
+    color: #fff;
+}
+
+/* Strava */
+.social-btn.strava {
+    background: #FC4C02;
+    color: #fff;
 }
 
 /* Sections */
