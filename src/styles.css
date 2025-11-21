@@ -79,6 +79,19 @@ height: 50px;
     height: 100%;
 }
 
+.video-logo {
+    position: absolute;
+    right: 100px;            /* Abstand vom rechten Rand */
+    top: 80%;               /* mittig vertikal */
+    transform: translateY(-50%);
+    height: 200px;           /* gewünschte Größe, anpassen */
+    width: auto;
+    z-index: 30;            /* über dem Video */
+    pointer-events: none;   /* klicks passieren zum Video */
+    filter: drop-shadow(0 6px 18px rgba(0,0,0,0.6));
+    opacity: 0.95;
+}
+
 .hero-video {
     width: 100%;
     height: 100%;
