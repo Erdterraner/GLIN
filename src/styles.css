@@ -29,7 +29,22 @@ height: 50px;
     font-weight: bold;
     letter-spacing: 2px;
     color: inherit;
-    background-color:  rgba(35, 34, 34, 0.8);
+    background-color: transparent
+}
+
+.logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 60px; /* nach Bedarf anpassen */
+    display: block;
+}
+
+.nav-links {
+    margin-left: auto;
+    display: flex;
+    gap: 16px;
+    align-items: center;
 }
 
 .nav-links {
@@ -954,9 +969,14 @@ height: 50px;
     align-items: flex-start;
 }
 
-.footer-left .logo {
-    font-size: 32px;
-    margin-bottom: 15px;
+.main-footer .logo,
+.footer-center .logo {
+    height: 100px; 
+    width: auto;
+    position: center; 
+    transform: none;
+    margin: 0;
+    display: block;
 }
 
 .footer-left p {
