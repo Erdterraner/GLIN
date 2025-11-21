@@ -81,8 +81,8 @@ height: 50px;
 
 .video-logo {
     position: absolute;
-    right: 100px;            /* Abstand vom rechten Rand */
-    top: 80%;               /* mittig vertikal */
+    right: 20px;            /* Abstand vom rechten Rand */
+    top: 90%;               /* mittig vertikal */
     transform: translateY(-50%);
     height: 200px;           /* gewünschte Größe, anpassen */
     width: auto;
@@ -980,17 +980,21 @@ height: 50px;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    position: relative;
 }
+
 
 .main-footer .logo,
 .footer-center .logo {
     height: 100px; 
     width: auto;
-    position: center; 
+    position: static; 
     transform: none;
     margin: 0;
     display: block;
 }
+
+
 
 .footer-left p {
     color:#fa4d03;
