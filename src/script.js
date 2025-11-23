@@ -8,16 +8,16 @@ const pauseIcon = document.getElementById('pause-icon');
 
 const videoData = [
     {
-        title: "Welcome to Our Portfolio",
-        description: "Discover the creative work and passions of Bo and Morris"
+        title: "Welcome to our portfolio",
+        description: "Discover the world of Bo & Morris"
     },
     {
-        title: "Innovation & Creativity",
-        description: "Pushing boundaries through design and technology"
+        title: "Speed & Adrenaline",
+        description: "Chasing the thrill with every turn"
     },
     {
-        title: "Passion Meets Purpose",
-        description: "Creating meaningful experiences that inspire"
+        title: "Endurance & Elevation",
+        description: "Rising higher, pushing further"
     }
 ];
 
