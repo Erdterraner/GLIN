@@ -257,3 +257,32 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
+
+gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(SplitText);
+
+let tlIntro = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".intro-section",
+    scrub: 1,
+    pin: true,
+  }
+});
+
+tlIntro.to('#text-wrapper', {scale: 130, xPercent: -410, transaformOrigin: "50% 50%"})
+
+
+let split = new SplitText(".section-2 p", { type: "lines" });
+let tlSection2 = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".section-2",
+    start: "30% 50%",
+    toggleActions: 'play pause play reset',
+  }
+});
+tlSection2.from(split.lines, {
+  opacity: 0,
+  y: 100,
+  stagger: 0.1
+});
