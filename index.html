@@ -1,51 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bo & Morris Portfolio</title>
-    <link rel="stylesheet" href="src/parallax.css">
     <link rel="stylesheet" href="src/styles.css">
 </head>
-<h1>Test Commit </h1>
 <body>
-    <!-- Main Navigation -->
-    <nav class="main-nav">
-        <img src="src/images/Logo_rund (2).png" class="logo">
+    <!-- Parallax Mountains Background -->
+    <div class="parallax-container">
+        <div class="mountain mountain-1"></div>
+        <div class="mountain mountain-2"></div>
+        <div class="mountain mountain-3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <img src="src/images/Logo_rund (2).png" class="logo-img" alt="Logo">
         <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="#home" class="active">Startseite</a></li>
             <li><a href="src/pages/bo_portfolio.html">Bo</a></li>
             <li><a href="src/pages/morris_portfolio.html">Morris</a></li>
         </ul>
     </nav>
 
-    <!-- Hero Video Section -->
-    <section class="hero-section">
+    <!-- Hero Section -->
+    <section id="home" class="hero-section video-hero">
         <div class="video-container">
-            <video class="hero-video" muted loop>
+            <video class="hero-video active" muted loop autoplay playsinline>
                 <source src="src/videos/hero_video2.mp4" type="video/mp4">
             </video>
-            <video class="hero-video active" muted loop autoplay>
+            <video class="hero-video" muted loop playsinline>
                 <source src="src/videos/hero_video1.mp4" type="video/mp4">
             </video>
-            <video class="hero-video" muted loop>
+            <video class="hero-video" muted loop playsinline>
                 <source src="src/videos/hero_video3.mp4" type="video/mp4">
             </video>
 
-            <img src="src/images/Logo_rund (2).png" alt="Logo" class="video-logo" aria-hidden="true">
-
-
             <div class="video-overlay">
-                <h1 class="video-title">Welcome to our portfolio</h1>
-                <p class="video-description">Discover the world of Bo & Morris</p>
+                <h1 class="video-title">Willkommen auf unserem Portfolio</h1>
+                <p class="video-description">Entdecke die Welt von Bo & Morris</p>
 
                 <div class="video-controls">
                     <button class="play-pause-btn" onclick="togglePlayPause()">
-                        <svg width="20" height="20" viewBox="0 0 20 20" id="play-icon">
+                        <svg width="20" height="20" viewBox="0 0 20 20" id="play-icon" style="display:none;">
                             <path d="M5 3l12 7-12 7z" fill="#000" />
                         </svg>
-                        <svg width="20" height="20" viewBox="0 0 20 20" id="pause-icon" style="display:none;">
+                        <svg width="20" height="20" viewBox="0 0 20 20" id="pause-icon">
                             <path d="M6 3h3v14H6zm5 0h3v14h-3z" fill="#000" />
                         </svg>
                     </button>
@@ -56,65 +57,48 @@
                     </div>
                 </div>
             </div>
+
+            <img src="src/images/Logo_rund (2).png" alt="Logo" class="video-logo">
         </div>
     </section>
-    <div>
-        <section class="home-about">
-            <div class="about-content">
-                <h2>Über uns</h2>
-                <p>Hey! Wir sind Bo und Morris, Klassenkameraden im DBM Studium. Auf dieser Website teilen wir, wer wir sind und was wir gerne tun.</p>
 
-                <div class="about-grid">
-                    <div class="about-card">
-                        <div class="about-icon">💻</div>
-                        <h3>Bo</h3>
-                        <p>Ich bin der Techie im Team. Ich liebe es zu coden, Probleme zu lösen und mit neuen Tools und Ideen zu experimentieren.</p>
-                    </div>
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio-section">
+        <div class="portfolio-container">
+            <h2 class="section-title">Lerne uns kennen</h2>
+            <p class="portfolio-intro">Entdecke unsere individuellen Portfolios und erfahre mehr über unsere Projekte, Skills und Leidenschaften.</p>
 
-                    <div class="about-card">
-                        <div class="about-icon">🎨</div>
-                        <h3>Morris</h3>
-                        <p>Ich bin der, der gerne gestaltet mit Design, Storytelling und allem, was Dinge lebendig macht.</p>
-                    </div>
-
-                    <div class="about-card">
-                        <div class="about-icon">🚀</div>
-                        <h3>Zusammen</h3>
-                        <p>Wir verbinden unsere Fähigkeiten, um Projekte zu kreieren, die uns widerspiegeln – eine perfekte Mischung aus Technik und Kreativität.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-    <div class="container-parallax" style="background-image: 'src/images/BackgroundMountain.jpg'">
-        <section class="portfolio-preview">
-            <h2>Lerne uns kennen</h2>
             <div class="portfolio-grid">
-                <div class="portfolio-card" onclick="location.href='src/pages/bo_portfolio.html'">
-                    <img src="src/images/Bo_Hauptseite.jpg" alt="Bo">
-                    <div class="card-overlay">
-                        <h2 class="card-title">Bo</h2>
-                        <p class="card-subtitle">Junior Software Developer</p>
-                        <p class="card-description">Ivoclar</p>
+                <a href="src/pages/bo_portfolio.html" class="portfolio-card">
+                    <div class="portfolio-image">
+                        <img src="src/images/Bo_Hauptseite.jpg" alt="Bo">
                     </div>
-                </div>
-                <div class="portfolio-card" onclick="location.href='src/pages/morris_portfolio.html'">
-                    <img src="src/images/Mo_Hauptseite.jpg"
-                        alt="Morris">
-                    <div class="card-overlay">
-                        <h2 class="card-title">Morris</h2>
-                        <p class="card-subtitle">Banker</p>
-                        <p class="card-description">Zürcher Kantonalbank</p>
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-title">Bo</div>
+                        <div class="portfolio-subtitle">Junior Software Developer</div>
+                        <div class="portfolio-description">Ivoclar</div>
                     </div>
-                </div>
-            </div>
-        </section>
-    </div>
+                </a>
 
-    <footer class="main-footer">
+                <a href="src/pages/morris_portfolio.html" class="portfolio-card">
+                    <div class="portfolio-image">
+                        <img src="src/images/Mo_Hauptseite.jpg" alt="Morris">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-title">Morris</div>
+                        <div class="portfolio-subtitle">Banker</div>
+                        <div class="portfolio-description">Zürcher Kantonalbank</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
         <div class="footer-content">
             <div class="footer-center">
-                <img src="src/images/Logo_rund (2).png" class="logo">
+                <div class="footer-logo">BO & MORRIS</div>
                 <p>Creating exceptional digital experiences</p>
             </div>
             <div class="footer-right">
@@ -126,7 +110,95 @@
             </div>
         </div>
     </footer>
-    <script src="src/script.js"></script>
-</body>
 
+    <script>
+        let currentVideoIndex = 0;
+        const videos = document.querySelectorAll('.hero-video');
+        const dots = document.querySelectorAll('.dot');
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Ensure first video plays
+            if (videos.length > 0) {
+                videos.forEach((video, i) => {
+                    if (i === 0) {
+                        video.classList.add('active');
+                        video.play().catch(e => console.log('Autoplay prevented:', e));
+                    } else {
+                        video.classList.remove('active');
+                    }
+                });
+                dots[0].classList.add('active');
+            }
+        });
+
+        function changeVideo(index) {
+            // Pause all videos and remove active class
+            videos.forEach(video => {
+                video.classList.remove('active');
+                video.pause();
+            });
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            // Activate selected video
+            if (videos[index]) {
+                videos[index].classList.add('active');
+                videos[index].currentTime = 0;
+                videos[index].play().catch(e => console.log('Play prevented:', e));
+                dots[index].classList.add('active');
+                currentVideoIndex = index;
+                
+                // Update play/pause icons
+                document.getElementById('play-icon').style.display = 'none';
+                document.getElementById('pause-icon').style.display = 'block';
+            }
+        }
+
+        function togglePlayPause() {
+            const currentVideo = videos[currentVideoIndex];
+            const playIcon = document.getElementById('play-icon');
+            const pauseIcon = document.getElementById('pause-icon');
+            
+            if (!currentVideo) return;
+            
+            if (currentVideo.paused) {
+                currentVideo.play();
+                playIcon.style.display = 'none';
+                pauseIcon.style.display = 'block';
+            } else {
+                currentVideo.pause();
+                playIcon.style.display = 'block';
+                pauseIcon.style.display = 'none';
+            }
+        }
+
+        // Parallax effect on scroll
+        window.addEventListener('scroll', () => {
+            const mountains = document.querySelectorAll('.mountain');
+            const scrollY = window.pageYOffset;
+            mountains.forEach((mountain, index) => {
+                const speed = 0.5 + (index * 0.1);
+                mountain.style.transform = `translateY(${scrollY * speed}px)`;
+            });
+        });
+
+        // Update active nav link on scroll
+        window.addEventListener('scroll', () => {
+            let current = '';
+            document.querySelectorAll('section').forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 300) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
 </html>

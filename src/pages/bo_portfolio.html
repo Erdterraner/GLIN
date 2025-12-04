@@ -1,56 +1,460 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bo - Portfolio</title>
-    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js?r=5426"></script>
-        <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollTrigger.min.js?v=3.3.0-3"></script>
-        <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1/bundled/lenis.min.js"></script>
-      
     <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="../scroll.css">
-    <script src="../script.js"></script>
 </head>
 <body>
-<div>
-<div class="container intro-section">
-  <div id="text-wrapper">
-    <img   width="100%" src="https://assets.website-files.com/649d3eeab715708cabae995a/649d4aa28aeae2926e9c6919_macbook-air-text.svg" alt="Image contains MacBook Air text">
-  </div>
-</div>
- <section class="section section-2 black ">
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi, neque, harum reiciendis enim necessitatibus excepturi velit animi temporibus corrupti illum tenetur? Odit consequuntur voluptatum iure adipisci minus impedit inventore quam.</p>
-  </section> 
-  <section class="section purple ">
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi, neque, harum reiciendis enim necessitatibus excepturi velit animi temporibus corrupti illum tenetur? Odit consequuntur voluptatum iure adipisci minus impedit inventore quam.</p>
-  </section> 
-   <section class="section blue ">
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi, neque, harum reiciendis enim necessitatibus excepturi velit animi temporibus corrupti illum tenetur? Odit consequuntur voluptatum iure adipisci minus impedit inventore quam.</p>
-  </section> 
-  </div>
-<div class="template-footer">
-  <a href="https://youtu.be/QmGHzZETBgA"><svg xmlns="http://www.w3.org/2000/svg" width="30px" viewBox="0 0 576 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z" fill="#FF0000"/></svg></a>
-  <a href="https://www.trapti.dev"> <svg xmlns="http://www.w3.org/2000/svg" width="20px" viewBox="0 0 26 26">
-  <defs/>
-  <g fill="#030104">
-    <path d="M8.083 11.222L6.419 15a.276.276 0 01-.257.154H5.31c-.113 0-.216-.061-.256-.154l-.79-1.803a15.454 15.454 0 01-.213-.517c-.073.186-.148.359-.223.525l-.833 1.8a.277.277 0 01-.255.149h-.852a.276.276 0 01-.259-.158L.072 11.217c-.03-.074-.018-.156.034-.221s.135-.103.225-.103h.959c.121 0 .227.069.263.169l.684 1.92c.057.162.11.315.159.461.06-.146.125-.3.194-.463l.842-1.932a.277.277 0 01.256-.155h.792c.115 0 .217.063.258.157l.798 1.89c.072.17.136.329.195.479.049-.142.106-.296.171-.465l.737-1.898a.275.275 0 01.26-.164h.926a.29.29 0 01.227.104.22.22 0 01.031.226zm8.922 0L15.341 15a.276.276 0 01-.256.154h-.854a.276.276 0 01-.256-.154l-.789-1.803a13.647 13.647 0 01-.214-.517c-.073.186-.148.359-.223.525l-.833 1.8a.276.276 0 01-.255.149h-.853a.277.277 0 01-.259-.158l-1.557-3.779a.218.218 0 01.034-.221.291.291 0 01.225-.103h.959c.121 0 .227.069.263.169l.683 1.92.161.461c.059-.146.123-.3.192-.463l.843-1.932a.275.275 0 01.256-.155h.792c.115 0 .218.063.258.157l.799 1.89c.071.17.135.329.193.479.051-.142.106-.296.172-.465l.737-1.898c.038-.098.144-.164.261-.164h.926c.092 0 .177.039.227.104a.218.218 0 01.032.226zm8.921 0L24.263 15a.277.277 0 01-.257.154h-.853c-.113 0-.216-.061-.256-.154l-.789-1.803a13.647 13.647 0 01-.214-.517c-.073.186-.149.359-.224.525l-.833 1.8a.277.277 0 01-.255.149h-.852a.277.277 0 01-.26-.158l-1.557-3.779c-.029-.074-.019-.156.033-.221s.136-.103.226-.103h.96c.121 0 .227.069.262.169l.684 1.92.16.461c.059-.146.123-.3.192-.463l.843-1.932a.278.278 0 01.257-.155h.791c.115 0 .218.063.258.157l.798 1.89c.072.17.137.329.196.479.049-.142.106-.296.171-.465l.738-1.898c.037-.098.142-.164.26-.164h.926c.092 0 .176.039.227.104a.224.224 0 01.031.226zM2.71 9c.283-.718.637-1.401 1.057-2.037.062.012.12.037.185.037h1.88a18.675 18.675 0 00-.49 2h2.055c.155-.699.335-1.376.562-2h9.986c.227.624.407 1.301.562 2h2.055a18.675 18.675 0 00-.49-2h1.88c.065 0 .123-.025.186-.037.418.636.773 1.319 1.056 2.037h2.121c-1.691-5.216-6.591-9-12.363-9S2.28 3.784.588 9H2.71zm17.768-4H19.29a12.54 12.54 0 00-.851-1.519c.74.428 1.422.938 2.039 1.519zm-7.526-3c1.551 0 2.983 1.154 4.062 3H8.89c1.079-1.846 2.511-3 4.062-3zM7.463 3.481c-.308.469-.592.976-.85 1.519H5.426a11.074 11.074 0 012.037-1.519zM23.194 17c-.283.719-.638 1.4-1.057 2.037-.062-.012-.12-.037-.185-.037h-1.881c.199-.634.355-1.309.49-2h-2.055a15.848 15.848 0 01-.562 2H7.959a16.018 16.018 0 01-.562-2H5.343c.135.691.291 1.366.49 2H3.952c-.065 0-.123.025-.185.037A11.107 11.107 0 012.71 17H.588c1.692 5.216 6.592 9 12.364 9s10.672-3.784 12.363-9h-2.121zM5.426 21h1.188c.258.543.542 1.051.85 1.519A11.048 11.048 0 015.426 21zm7.526 3c-1.551 0-2.983-1.154-4.062-3h8.123c-1.078 1.846-2.51 3-4.061 3zm5.488-1.481c.309-.468.593-.976.851-1.519h1.188c-.618.581-1.3 1.091-2.039 1.519z"/>
-  </g>
-</svg> </a>
-  <a href="https://twitter.com/imtraptir"> 
-<svg width="20px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 512 512">
-<path style="fill:#03A9F4;" d="M512,97.248c-19.04,8.352-39.328,13.888-60.48,16.576c21.76-12.992,38.368-33.408,46.176-58.016
-	c-20.288,12.096-42.688,20.64-66.56,25.408C411.872,60.704,384.416,48,354.464,48c-58.112,0-104.896,47.168-104.896,104.992
-	c0,8.32,0.704,16.32,2.432,23.936c-87.264-4.256-164.48-46.08-216.352-109.792c-9.056,15.712-14.368,33.696-14.368,53.056
-	c0,36.352,18.72,68.576,46.624,87.232c-16.864-0.32-33.408-5.216-47.424-12.928c0,0.32,0,0.736,0,1.152
-	c0,51.008,36.384,93.376,84.096,103.136c-8.544,2.336-17.856,3.456-27.52,3.456c-6.72,0-13.504-0.384-19.872-1.792
-	c13.6,41.568,52.192,72.128,98.08,73.12c-35.712,27.936-81.056,44.768-130.144,44.768c-8.608,0-16.864-0.384-25.12-1.44
-	C46.496,446.88,101.6,464,161.024,464c193.152,0,298.752-160,298.752-298.688c0-4.64-0.16-9.12-0.384-13.568
-	C480.224,136.96,497.728,118.496,512,97.248z"/>
+    <!-- Parallax Mountains Background -->
+    <div class="parallax-container">
+        <div class="mountain mountain-1"></div>
+        <div class="mountain mountain-2"></div>
+        <div class="mountain mountain-3"></div>
+    </div>
 
-</svg>
-</a>
-</div>
+    <!-- Navigation -->
+    <nav>
+        <img src="../images/Logo_rund (2).png" class="logo-img" alt="Logo">
+        <ul class="nav-links">
+            <li><a href="../../index.html">Startseite</a></li>
+            <li><a href="bo_portfolio.html" class="active">Bo</a></li>
+            <li><a href="morris_portfolio.html">Morris</a></li>
+        </ul>
+    </nav>
+
+    <!-- Sub Navigation -->
+    <div class="portfolio-nav">
+        <a href="#hero" class="active">Start</a>
+        <a href="#about">Über mich</a>
+        <a href="#skills">Skills</a>
+        <a href="#hobby">Bouldern</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="intro-section">
+        <div id="text-wrapper">
+            <h1>Bo Ryffel</h1>
+            <p>Junior Software Developer & Dental CAD/CAM Specialist</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="content-section">
+        <div class="section-content">
+            <div class="about-container">
+                <div class="about-visual">
+                    <div class="about-image-container">
+                        <img src="../images/Bo_Hauptseite.jpg" alt="Bo Ryffel">
+                    </div>
+                    
+                    <!-- Social Links -->
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/boryffel/" class="social-btn instagram" aria-label="Instagram" target="_blank" rel="noopener">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.4"/>
+                                <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.4"/>
+                                <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/bo-ryffel-9255a4267?utm_source=share_via&utm_content=profile&utm_medium=member_android" class="social-btn linkedin" aria-label="LinkedIn" target="_blank" rel="noopener">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="2" y="2" width="20" height="20" rx="2" stroke="currentColor" stroke-width="1.4"/>
+                                <rect x="6" y="10" width="2.5" height="8" fill="currentColor"/>
+                                <path d="M10 10h2.4v1.1h.03c.33-.62 1.14-1.2 2.35-1.2 2.52 0 2.99 1.66 2.99 3.82V18h-2.6v-3.6c0-.86-.02-1.97-1.2-1.97-1.2 0-1.38.94-1.38 1.9V18H10V10z" fill="currentColor"/>
+                                <circle cx="7.3" cy="7" r="1.2" fill="currentColor"/>
+                            </svg>
+                        </a>
+                        <a href="mailto:bo.ryffel@outlook.com" class="social-btn outlook" aria-label="E-Mail" target="_self">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="2" y="5" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.4"/>
+                                <path d="M3 7.5l8.5 6L20 7.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h2>Über mich</h2>
+                    
+                    <div class="about-grid">
+                        <div class="about-card">
+                            <h4>👨‍💻 Persönlich</h4>
+                            <p>Ich bin 21 Jahre alt und wohne in Azmoos mit 2 älteren Geschwistern. In meiner Freizeit bin ich am liebsten in Bewegung – im Winter auf den Skiern, im Sommer auf dem Motorrad oder beim Bouldern.</p>
+                        </div>
+                        <div class="about-card">
+                            <h4>💼 Beruflich</h4>
+                            <p>Junior Software Developer bei Ivoclar Vivadent, wo ich meine Lehre absolviert habe. Heute verantworte ich die kompletten Backend Services für CAM-Software.</p>
+                        </div>
+                        <div class="about-card">
+                            <h4>🏆 Engagements</h4>
+                            <p>Experte bei SwissSkills und ehemaliger WorldSkills-Teilnehmer in IT Software Solutions for Business.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="content-section">
+        <div class="section-content">
+            <h2 class="skills-title">Skills & Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>💻 Softwareentwicklung</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">C#</span>
+                        <span class="skill-tag">Blazor</span>
+                        <span class="skill-tag">ABAP</span>
+                        <span class="skill-tag">.NET</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3>🚀 DevOps</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Release Management</span>
+                        <span class="skill-tag">Azure</span>
+                        <span class="skill-tag">CI/CD Pipelines</span>
+                        <span class="skill-tag">Git</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3>🦷 Dental CAD/CAM</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">3D Printing</span>
+                        <span class="skill-tag">PrograMill</span>
+                        <span class="skill-tag">CAM-Software</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hobby Section -->
+    <section id="hobby" class="content-section">
+        <div class="section-content">
+            <h2 class="hobby-title">Mein Hobby: Bouldern</h2>
+            <p class="hobby-desc">Beim Bouldern teste ich meine Grenzen. Jede Route ist ein neues Puzzle – körperlich und mental.</p>
+            
+            <div class="hobby-container">
+                <div class="canvas-wrapper">
+                    <canvas id="boulderCanvas" width="450" height="600"></canvas>
+                    <div class="grip-selector">
+                        <h4>Grifftyp auswählen:</h4>
+                        <div class="grip-buttons">
+                            <button class="grip-btn active" data-grip="jug">👊</button>
+                            <button class="grip-btn" data-grip="crimp">🤏</button>
+                            <button class="grip-btn" data-grip="sloper">☝️</button>
+                            <button class="grip-btn" data-grip="pocket">🕳️</button>
+                        </div>
+                        <div class="rotation-control">
+                            <label>Rotation: <span class="rotation-value">0°</span></label>
+                            <input type="range" min="0" max="360" value="0" class="rotation-slider">
+                        </div>
+                    </div>
+                    <p class="canvas-hint">Klick zum platzieren • Rechtsklick zum löschen</p>
+                </div>
+                <div class="routes-panel">
+                    <h4>🏔️ Gespeicherte Routen</h4>
+                    <div id="routesList">
+                        <p style="color: #999; font-style: italic;">Noch keine Routen gespeichert</p>
+                    </div>
+                    <div class="route-input-group">
+                        <input type="text" id="routeName" placeholder="Route benennen...">
+                        <button id="saveRoute" class="control-btn">💾</button>
+                    </div>
+                    <button id="clearCanvas" class="control-btn clear-btn">🔄 Leeren</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-center">
+                <div class="footer-logo">BO & MORRIS</div>
+                <p>Creating exceptional digital experiences</p>
+            </div>
+            <div class="footer-right">
+                <div class="footer-links">
+                    <a href="bo_portfolio.html">Bo</a>
+                    <a href="morris_portfolio.html">Morris</a>
+                </div>
+                <p class="copyright">© 2025 Bo & Morris Portfolio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Parallax effect on scroll
+        const parallaxContainer = document.querySelector('.parallax-container');
+        const mountains = document.querySelectorAll('.mountain');
+
+        window.addEventListener('scroll', () => {
+            const scrollY = window.pageYOffset;
+            mountains.forEach((mountain, index) => {
+                const speed = 0.5 + (index * 0.1);
+                mountain.style.transform = `translateY(${scrollY * speed}px)`;
+            });
+        });
+
+        // Smooth scroll and active nav link
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            document.querySelectorAll('section').forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 300) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            // Update sub-nav active state
+            document.querySelectorAll('.portfolio-nav a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Boulder Routes Canvas
+        const canvas = document.getElementById('boulderCanvas');
+        const ctx = canvas.getContext('2d');
+        let holds = [];
+        let routes = JSON.parse(localStorage.getItem('boulderRoutes')) || [];
+        let selectedGrip = 'jug';
+        let selectedRotation = 0;
+
+        const GRIP_TYPES = {
+            jug: { color: '#ff8c00', size: 22 },
+            crimp: { color: '#ff6b00', size: 18 },
+            sloper: { color: '#ffa500', size: 24 },
+            pocket: { color: '#ffb733', size: 16 }
+        };
+
+        // Grip selector
+        document.querySelectorAll('.grip-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.grip-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                selectedGrip = this.dataset.grip;
+                document.querySelector('.rotation-slider').value = 0;
+                selectedRotation = 0;
+                updateRotationDisplay();
+            });
+        });
+
+        // Rotation slider
+        document.querySelector('.rotation-slider').addEventListener('input', function() {
+            selectedRotation = parseInt(this.value);
+            updateRotationDisplay();
+        });
+
+        function updateRotationDisplay() {
+            document.querySelector('.rotation-value').textContent = selectedRotation + '°';
+        }
+
+        function drawGrip(x, y, type, rotation) {
+            const gripData = GRIP_TYPES[type];
+            const size = gripData.size;
+
+            ctx.save();
+            ctx.translate(x, y);
+            ctx.rotate((rotation * Math.PI) / 180);
+
+            switch(type) {
+                case 'jug':
+                    ctx.fillStyle = gripData.color;
+                    ctx.beginPath();
+                    ctx.arc(0, 0, size, 0, Math.PI * 2);
+                    ctx.fill();
+                    ctx.strokeStyle = 'rgba(0, 0, 0, 0.1)';
+                    ctx.lineWidth = 2;
+                    ctx.stroke();
+                    break;
+                
+                case 'crimp':
+                    ctx.fillStyle = gripData.color;
+                    ctx.beginPath();
+                    ctx.moveTo(-size, -size);
+                    ctx.lineTo(size, -size);
+                    ctx.lineTo(size * 0.7, size);
+                    ctx.lineTo(-size * 0.7, size);
+                    ctx.closePath();
+                    ctx.fill();
+                    ctx.strokeStyle = 'rgba(0, 0, 0, 0.1)';
+                    ctx.lineWidth = 1.5;
+                    ctx.stroke();
+                    break;
+                
+                case 'sloper':
+                    ctx.fillStyle = gripData.color;
+                    ctx.beginPath();
+                    ctx.ellipse(0, 0, size * 1.2, size * 0.6, 0, 0, Math.PI * 2);
+                    ctx.fill();
+                    ctx.strokeStyle = 'rgba(0, 0, 0, 0.1)';
+                    ctx.lineWidth = 2;
+                    ctx.stroke();
+                    break;
+                
+                case 'pocket':
+                    ctx.fillStyle = gripData.color;
+                    ctx.beginPath();
+                    ctx.moveTo(0, -size);
+                    ctx.lineTo(size * 0.8, -size * 0.3);
+                    ctx.lineTo(size * 0.5, size * 0.8);
+                    ctx.lineTo(-size * 0.5, size * 0.8);
+                    ctx.lineTo(-size * 0.8, -size * 0.3);
+                    ctx.closePath();
+                    ctx.fill();
+                    ctx.strokeStyle = 'rgba(0, 0, 0, 0.15)';
+                    ctx.lineWidth = 1.5;
+                    ctx.stroke();
+                    break;
+            }
+
+            ctx.restore();
+        }
+
+        function drawCanvas() {
+            ctx.fillStyle = '#ffffff';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            ctx.strokeStyle = '#e8e8e8';
+            ctx.lineWidth = 1;
+            for (let i = 0; i < canvas.width; i += 45) {
+                ctx.beginPath();
+                ctx.moveTo(i, 0);
+                ctx.lineTo(i, canvas.height);
+                ctx.stroke();
+            }
+            for (let i = 0; i < canvas.height; i += 45) {
+                ctx.beginPath();
+                ctx.moveTo(0, i);
+                ctx.lineTo(canvas.width, i);
+                ctx.stroke();
+            }
+            
+            holds.forEach((hold) => {
+                drawGrip(hold.x, hold.y, hold.type, hold.rotation);
+            });
+        }
+
+        canvas.addEventListener('click', (e) => {
+            const rect = canvas.getBoundingClientRect();
+            const scaleX = canvas.width / rect.width;
+            const scaleY = canvas.height / rect.height;
+            const x = (e.clientX - rect.left) * scaleX;
+            const y = (e.clientY - rect.top) * scaleY;
+            holds.push({ x, y, type: selectedGrip, rotation: selectedRotation });
+            drawCanvas();
+        });
+
+        canvas.addEventListener('contextmenu', (e) => {
+            e.preventDefault();
+            const rect = canvas.getBoundingClientRect();
+            const scaleX = canvas.width / rect.width;
+            const scaleY = canvas.height / rect.height;
+            const x = (e.clientX - rect.left) * scaleX;
+            const y = (e.clientY - rect.top) * scaleY;
+            
+            holds = holds.filter(hold => {
+                const dist = Math.sqrt((hold.x - x) ** 2 + (hold.y - y) ** 2);
+                return dist > 30;
+            });
+            drawCanvas();
+        });
+
+        document.getElementById('saveRoute').addEventListener('click', () => {
+            const name = document.getElementById('routeName').value.trim();
+            if (!name) {
+                alert('Bitte gib der Route einen Namen!');
+                return;
+            }
+            if (holds.length < 2) {
+                alert('Mindestens 2 Griffe erforderlich!');
+                return;
+            }
+            
+            const route = {
+                id: Date.now(),
+                name: name,
+                holds: [...holds],
+                difficulty: estimateDifficulty(holds.length)
+            };
+            
+            routes.push(route);
+            localStorage.setItem('boulderRoutes', JSON.stringify(routes));
+            document.getElementById('routeName').value = '';
+            holds = [];
+            drawCanvas();
+            updateRoutesList();
+        });
+
+        document.getElementById('clearCanvas').addEventListener('click', () => {
+            holds = [];
+            drawCanvas();
+        });
+
+        function estimateDifficulty(gripCount) {
+            if (gripCount < 5) return '🟢 Einfach';
+            if (gripCount < 10) return '🟡 Mittel';
+            if (gripCount < 15) return '🟠 Schwer';
+            return '🔴 Sehr schwer';
+        }
+
+        function updateRoutesList() {
+            const list = document.getElementById('routesList');
+            if (routes.length === 0) {
+                list.innerHTML = '<p style="color: #999; font-style: italic;">Noch keine Routen gespeichert</p>';
+                return;
+            }
+            
+            list.innerHTML = routes.map((route, index) => `
+                <div class="route-item">
+                    <div>
+                        <strong>${route.name}</strong>
+                        <p>${route.difficulty} • ${route.holds.length} Griffe</p>
+                    </div>
+                    <div class="route-buttons">
+                        <button class="route-btn route-btn-load" onclick="window.loadRoute(${index})">Laden</button>
+                        <button class="route-btn route-btn-delete" onclick="window.deleteRoute(${index})">✕</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function loadRoute(index) {
+            holds = JSON.parse(JSON.stringify(routes[index].holds));
+            document.getElementById('routeName').value = routes[index].name;
+            drawCanvas();
+        }
+
+        function deleteRoute(index) {
+            if (confirm('Route wirklich löschen?')) {
+                routes.splice(index, 1);
+                localStorage.setItem('boulderRoutes', JSON.stringify(routes));
+                updateRoutesList();
+            }
+        }
+
+        window.loadRoute = loadRoute;
+        window.deleteRoute = deleteRoute;
+
+        drawCanvas();
+        updateRoutesList();
+    </script>
 </body>
 </html>

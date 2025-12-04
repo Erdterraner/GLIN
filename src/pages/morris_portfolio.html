@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,144 +7,231 @@
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
+    <!-- Parallax Mountains Background -->
+    <div class="parallax-container">
+        <div class="mountain mountain-1"></div>
+        <div class="mountain mountain-2"></div>
+        <div class="mountain mountain-3"></div>
+    </div>
+
     <!-- Main Navigation -->
-    <nav class="main-nav">
-<img src="../images/Logo_rund (2).png" class="logo">
+    <nav>
+        <img src="../images/Logo_rund (2).png" class="logo-img" alt="Logo">
         <ul class="nav-links">
-            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../../index.html">Startseite</a></li>
             <li><a href="bo_portfolio.html">Bo</a></li>
             <li><a href="morris_portfolio.html" class="active">Morris</a></li>
         </ul>
     </nav>
 
-    <div class="portfolio-page active">
-        <div class="portfolio-nav">
-            <a href="../../index.html" style="margin-right: auto;">← Back to Home</a>
-            <a href="#morris-about" class="active">About</a>
-            <a href="#morris-skills">Skills</a>
-            <a href="#morris-gallery">Gallery</a>
-            <a href="#morris-hobby">Hobby</a>
-        </div>
-
-        <div class="portfolio-content">
-            <div class="profile-header" id="morris-about">
-                <img src="../images/Mo_Hauptseite.jpg" alt="Morris" class="profile-img">
-                <h1>Morris</h1>
-                <p class="profile-tagline">Sachbearbeiter Juristische Personen</p>
-
-
-                <div class="social-links">
-                    <a href="https://www.instagram.com/" class="social-btn instagram" aria-label="Instagram" target="_blank" rel="noopener">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.4"/>
-                            <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.4"/>
-                            <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"/>
-                        </svg>
-                    </a>
-                    <a href="https://www.linkedin.com/" class="social-btn linkedin" aria-label="LinkedIn" target="_blank" rel="noopener">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="2" y="2" width="20" height="20" rx="2" stroke="currentColor" stroke-width="1.4"/>
-                            <rect x="6" y="10" width="2.5" height="8" fill="currentColor"/>
-                            <path d="M10 10h2.4v1.1h.03c.33-.62 1.14-1.2 2.35-1.2 2.52 0 2.99 1.66 2.99 3.82V18h-2.6v-3.6c0-.86-.02-1.97-1.2-1.97-1.2 0-1.38.94-1.38 1.9V18H10V10z" fill="currentColor"/>
-                            <circle cx="7.3" cy="7" r="1.2" fill="currentColor"/>
-                        </svg>
-                    </a>
-                    <a href="mailto:deissmorris@gmail.com" class="social-btn outlook" aria-label="E-Mail / Outlook" target="_self" rel="noopener">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="2" y="5" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.4"/>
-                            <path d="M3 7.5l8.5 6L20 7.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </a>
-                    <a href="https://www.strava.com/" class="social-btn strava" aria-label="Strava" target="_blank" rel="noopener">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3 17h3l3-7 3 10 4-10 4 7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2>Über mich</h2>
-                <p>Ich bin 21 Jahre alt, wohne in Rüti ZH und ich habe zwei ältere Geschwister. Ich habe die KV-Lehre bei der Zürcher Kantonalbank abgeschlossen. Während meiner Ausbildung konnte ich verschiedene Bereiche der Bank kennenlernen und wertvolle Erfahrungen sammeln. Aktuell arbeite ich in der Verarbeitung von Firmenkunden. Die Zusammenarbeit mit Unternehmen und das Verständnis für wirtschaftliche Zusammenhänge faszinieren mich besonders.</p>
-                <p style="margin-top: 20px;"></p>
-            </div>
-
-            <div class="section" id="morris-skills">
-                <h2>Skills & Expertise</h2>
-                <div class="skills-grid">
-                    <div class="skill-card">
-                        <h3>Banking & Finance</h3>
-                        <div class="skill-list">
-                            <span class="skill-tag">Anlagen</span>
-                            <span class="skill-tag">Finanzierungen</span>
-                            <span class="skill-tag">Basisdienstdienstleistungen</span>
-                            <span class="skill-tag">Privat- & Geschäftskunden</span>
-                        </div>
-                    </div>
-                    <div class="skill-card">
-                        <h3>Customer Experience</h3>
-                        <div class="skill-list">
-                            <span class="skill-tag">Kundenberatung & Kundenbetreuung</span>
-                            <span class="skill-tag">Kundenorientierung</span>
-                            <span class="skill-tag">Servicequalität</span>
-                        </div>
-                    </div>
-                    <div class="skill-card">
-                        <h3>Personal Development & Mindset</h3>
-                        <div class="skill-list">
-                            <span class="skill-tag">Zielorientierung</span>
-                            <span class="skill-tag">Durchhaltevermögen</span>
-                            <span class="skill-tag">Teamgeist</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="section" id="morris-hobby">
-                <h2>Mein Hobby: Trailrunning</h2>
-                <p>In meiner Freizeit zieht es mich in die Berge. Dort tanke ich Energie, geniesse die Natur und finde den perfekten Ausgleich zum Arbeitsalltag. Bewegung ist für mich mehr als nur Sport und gehört zu meinem Lebensstil. Ich übe gerne verschiedene Sportarten aus, aber Trailrunning ist meine absolute Passion. Trailrunning fühlt sich an wie Freiheit pur. Mit jedem Schritt spürt man den Boden, den Wind und die Kraft der Natur. Es ist dieser Mix aus Anstrengung und Leichtigkeit, dem Brennen in den Beinen und gleichzeitig der klare Kopf, wenn man den Rhythmus gefunden hat.</p>
-                
-                <div class="hobby-interactive">
-                    <h3 style="margin-bottom: 20px;">Trailrunning Collection</h3>
-<h3 style="margin-bottom: 10px;"> </h3>
-                    <div class="upload-area" onclick="document.getElementById('morris-upload').click()">
-                        <input type="file" id="morris-upload" accept="image/*" onchange="handleUpload(event, 'morris')">
-                        <p style="color: #888; margin-bottom: 20px;">Share your artwork with me! Click to upload or drag and drop</p>
-                        <button class="upload-btn">Choose File</button>
-                    </div>
-                    
-                    <div id="morris-gallery" class="hobby-gallery">
-                        <div class="hobby-item">
-                            <img src="../images/Mo_Trail1.jpg" alt="Abstract art">
-                            <div class="hobby-item-overlay">
-                                <p>Abstract Dreams</p>
-                            </div>
-                        </div>
-                        <div class="hobby-item">
-                            <img src="../images/Mo_Trail2.jpg" alt="Digital painting">
-                            <div class="hobby-item-overlay">
-                                <p>Digital Painting</p>
-                            </div>
-                        </div>
-                        <div class="hobby-item">
-                            <img src="../images/Mo_Trail3.jpg" alt="Mixed media">
-                            <div class="hobby-item-overlay">
-                                <p>Mixed Media</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2>Trainingssession buchen</h2>
-                <p>Komm mit auf die Trails! Gemeinsam entdecken wir neue Wege und geniessen die Natur.</p>
-                <a href="mailto:deissmorris@gmail.com" class="contact-btn">Contact Me</a>
-            </div>
-        </div>
+    <!-- Sub Navigation -->
+    <div class="portfolio-nav">
+        <a href="#hero" class="active">Start</a>
+        <a href="#about">Über mich</a>
+        <a href="#skills">Skills</a>
+        <a href="#hobby">Trailrunning</a>
+        <a href="#contact">Kontakt</a>
     </div>
 
-    <script src="../scripts.js"></script>
+    <!-- Hero Section -->
+    <section id="hero" class="intro-section">
+        <div id="text-wrapper">
+            <h1>Morris</h1>
+            <p>Sachbearbeiter Juristische Personen</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="content-section">
+        <div class="section-content">
+            <div class="about-container">
+                <div class="about-visual">
+                    <div class="about-image-container circular">
+                        <img src="../images/Mo_Hauptseite.jpg" alt="Morris">
+                    </div>
+                    
+                    <!-- Social Links -->
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/" class="social-btn instagram" aria-label="Instagram" target="_blank" rel="noopener">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.4"/>
+                                <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.4"/>
+                                <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/" class="social-btn linkedin" aria-label="LinkedIn" target="_blank" rel="noopener">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="2" y="2" width="20" height="20" rx="2" stroke="currentColor" stroke-width="1.4"/>
+                                <rect x="6" y="10" width="2.5" height="8" fill="currentColor"/>
+                                <path d="M10 10h2.4v1.1h.03c.33-.62 1.14-1.2 2.35-1.2 2.52 0 2.99 1.66 2.99 3.82V18h-2.6v-3.6c0-.86-.02-1.97-1.2-1.97-1.2 0-1.38.94-1.38 1.9V18H10V10z" fill="currentColor"/>
+                                <circle cx="7.3" cy="7" r="1.2" fill="currentColor"/>
+                            </svg>
+                        </a>
+                        <a href="mailto:deissmorris@gmail.com" class="social-btn outlook" aria-label="E-Mail" target="_self">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="2" y="5" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.4"/>
+                                <path d="M3 7.5l8.5 6L20 7.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.strava.com/" class="social-btn strava" aria-label="Strava" target="_blank" rel="noopener">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 17h3l3-7 3 10 4-10 4 7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h2>Über mich</h2>
+                    
+                    <div class="about-grid">
+                        <div class="about-card">
+                            <h4>👤 Persönlich</h4>
+                            <p>Ich bin 21 Jahre alt, wohne in Rüti ZH und habe zwei ältere Geschwister. In meiner Freizeit zieht es mich in die Berge – dort tanke ich Energie und finde den perfekten Ausgleich zum Arbeitsalltag.</p>
+                        </div>
+                        <div class="about-card">
+                            <h4>💼 Beruflich</h4>
+                            <p>KV-Lehre bei der Zürcher Kantonalbank abgeschlossen. Aktuell arbeite ich als Sachbearbeiter Juristische Personen in der Verarbeitung von Firmenkunden.</p>
+                        </div>
+                        <div class="about-card">
+                            <h4>🎯 Leidenschaft</h4>
+                            <p>Die Zusammenarbeit mit Unternehmen und das Verständnis für wirtschaftliche Zusammenhänge faszinieren mich besonders. Ich strebe stets nach Weiterentwicklung.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="content-section">
+        <div class="section-content">
+            <h2 class="skills-title">Skills & Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>💼 Banking & Finance</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Anlagen</span>
+                        <span class="skill-tag">Finanzierungen</span>
+                        <span class="skill-tag">Basisdienstleistungen</span>
+                        <span class="skill-tag">Privat- & Geschäftskunden</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3>🤝 Customer Experience</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Kundenberatung</span>
+                        <span class="skill-tag">Kundenbetreuung</span>
+                        <span class="skill-tag">Kundenorientierung</span>
+                        <span class="skill-tag">Servicequalität</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3>🎯 Personal Development</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Zielorientierung</span>
+                        <span class="skill-tag">Durchhaltevermögen</span>
+                        <span class="skill-tag">Teamgeist</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hobby Section -->
+    <section id="hobby" class="content-section">
+        <div class="section-content">
+            <h2 class="hobby-title">Mein Hobby: Trailrunning</h2>
+            <p class="hobby-desc">In meiner Freizeit zieht es mich in die Berge. Dort tanke ich Energie, geniesse die Natur und finde den perfekten Ausgleich zum Arbeitsalltag. Trailrunning fühlt sich an wie Freiheit pur. Mit jedem Schritt spürt man den Boden, den Wind und die Kraft der Natur.</p>
+            
+            <div class="hobby-gallery">
+                <div class="hobby-item">
+                    <img src="../images/Mo_Trail1.jpg" alt="Trail Running 1">
+                    <div class="hobby-item-overlay">
+                        <p>Mountain Trail</p>
+                    </div>
+                </div>
+                <div class="hobby-item">
+                    <img src="../images/Mo_Trail2.jpg" alt="Trail Running 2">
+                    <div class="hobby-item-overlay">
+                        <p>Sunset Run</p>
+                    </div>
+                </div>
+                <div class="hobby-item">
+                    <img src="../images/Mo_Trail3.jpg" alt="Trail Running 3">
+                    <div class="hobby-item-overlay">
+                        <p>Alpine Adventure</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="content-section">
+        <div class="section-content" style="text-align: center;">
+            <h2 class="skills-title">Trainingssession buchen</h2>
+            <p class="hobby-desc" style="max-width: 600px; margin: 0 auto 40px;">Komm mit auf die Trails! Gemeinsam entdecken wir neue Wege und geniessen die Natur.</p>
+            <a href="mailto:deissmorris@gmail.com" class="contact-btn">Kontaktiere mich</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-center">
+                <div class="footer-logo">BO & MORRIS</div>
+                <p>Creating exceptional digital experiences</p>
+            </div>
+            <div class="footer-right">
+                <div class="footer-links">
+                    <a href="bo_portfolio.html">Bo</a>
+                    <a href="morris_portfolio.html">Morris</a>
+                </div>
+                <p class="copyright">© 2025 Bo & Morris Portfolio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Parallax effect on scroll
+        window.addEventListener('scroll', () => {
+            const mountains = document.querySelectorAll('.mountain');
+            const scrollY = window.pageYOffset;
+            mountains.forEach((mountain, index) => {
+                const speed = 0.5 + (index * 0.1);
+                mountain.style.transform = `translateY(${scrollY * speed}px)`;
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Update active sub-nav link on scroll
+        window.addEventListener('scroll', () => {
+            let current = '';
+            document.querySelectorAll('section').forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 300) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            // Update sub-nav active state
+            document.querySelectorAll('.portfolio-nav a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
