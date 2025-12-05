@@ -1,447 +1,517 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bo - Portfolio</title>
     <link rel="stylesheet" href="../styles.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body>
-    <!-- Main Navigation -->
-    <nav class="main-nav">
-<img src="../images/Logo_rund (2).png" class="logo">
+    <!-- Parallax Mountains Background -->
+    <div class="parallax-container">
+        <div class="mountain mountain-1"></div>
+        <div class="mountain mountain-2"></div>
+        <div class="mountain mountain-3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <img src="../images/Logo_rund (2).png" class="logo-img" alt="Logo">
         <ul class="nav-links">
-            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../../index.html">Startseite</a></li>
             <li><a href="bo_portfolio.html" class="active">Bo</a></li>
             <li><a href="morris_portfolio.html">Morris</a></li>
         </ul>
     </nav>
 
-    <div class="portfolio-page active">
-        <div class="portfolio-nav">
-            <a href="../../index.html" style="margin-right: auto;">← Back to Home</a>
-            <a href="#bo-about" class="active">About</a>
-            <a href="#bo-skills">Skills</a>
-            <a href="#bo-projects">Projects</a>
-            <a href="#bo-hobby">Hobby</a>
-        </div>
-
-        <div class="portfolio-content">
-            <div class="profile-header" id="bo-about">
-                <img src="../images/Bo_Hauptseite.jpg" alt="Bo" class="profile-img">
-                <h1>Bo</h1>
-                <p class="profile-tagline">Dental CAD/CAM Specialist & Web Developer</p>
-                <div class="social-links">
-                    <a href="#" class="social-btn">LinkedIn</a>
-                    <a href="#" class="social-btn">GitHub</a>
-                    <a href="#" class="social-btn">Dribbble</a>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2>Über mich</h2>
-                <p>Ich bin 21 Jahre alt wohne in Azmoos und habe 2 ältere Geschwister.
-Ich arbeite derzeit in der Ivoclar als Junior Software Developer, wo ich auch schon meine Lehre gemacht habe. In meiner Lehre konnte ich viele verschiedene Bereiche anschauen, von First Level IT Support, Geräte Entwicklung von Brennöfen, Software Testing, SAP mit Fokus auf ABAB und Fiori und auch mein aktueller Bereich, in welchem wir CAM-Software entwickeln und ich mittlerweile für die kompletten Backend Services zuständig bin. 
-In meiner Freizeit bin ich am liebsten in Bewegung. Im Winter auf den Skiern und im Sommer auf dem Motorrad oder beim Bouldern. Daneben engagiere ich mich ein wenig in der ICT-Berufsbildung als Experte bei den SwissSkills und ehemaliger Teilnehmer der WorldSkills in der Disziplin IT Software Solutions for Business.
-</p>
-                <p style="margin-top: 20px;"></p>
-            </div>
-
-            <div class="section" id="bo-skills">
-                <h2>Skills & Expertise</h2>
-                <div class="skills-grid">
-                    <div class="skill-card">
-                        <h3>Dental CAD/CAM</h3>
-                        <div class="skill-list">
-                            <span class="skill-tag">Ivoclar Software</span>
-                            <span class="skill-tag">3D Printing</span>
-                            <span class="skill-tag">Dental Design</span>
-                            <span class="skill-tag">PrograMill</span>
-                            <span class="skill-tag">IPS e.max</span>
-                        </div>
-                    </div>
-                    <div class="skill-card">
-                        <h3>Design</h3>
-                        <div class="skill-list">
-                            <span class="skill-tag">UI/UX Design</span>
-                            <span class="skill-tag">Figma</span>
-                            <span class="skill-tag">Adobe XD</span>
-                            <span class="skill-tag">Photoshop</span>
-                            <span class="skill-tag">3D Modeling</span>
-                        </div>
-                    </div>
-                    <div class="skill-card">
-                        <h3>Development</h3>
-                        <div class="skill-list">
-                            <span class="skill-tag">HTML/CSS</span>
-                            <span class="skill-tag">JavaScript</span>
-                            <span class="skill-tag">React</span>
-                            <span class="skill-tag">Three.js</span>
-                            <span class="skill-tag">Node.js</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section" id="bo-projects">
-                <h2>Featured Projects</h2>
-                
-                <!-- 3D Tooth Model Project -->
-                <div class="featured-project">
-                    <div class="project-header">
-                        <h3>🦷 Interactive 3D Dental Crown Model</h3>
-                        <p>Ivoclar Vivadent CAD/CAM Project</p>
-                    </div>
-                    <div class="tooth-3d-container">
-                        <div id="tooth-canvas"></div>
-                        <div class="tooth-controls">
-                            <button onclick="rotateTooth('left')" class="control-btn">← Left</button>
-                            <button onclick="rotateTooth('up')" class="control-btn">↑ Up</button>
-                            <button onclick="rotateTooth('down')" class="control-btn">↓ Down</button>
-                            <button onclick="rotateTooth('right')" class="control-btn">Right →</button>
-                            <button onclick="resetToothView()" class="control-btn">🔄 Reset</button>
-                        </div>
-                    </div>
-                    <div class="project-details">
-                        <h4>Project Details</h4>
-                        <p>This precision dental crown was designed using Ivoclar Vivadent's advanced CAD/CAM software and manufactured with their state-of-the-art milling system. The design ensures perfect occlusion, natural aesthetics, and long-lasting durability.</p>
-                        <div class="project-specs">
-                            <div class="spec-item">
-                                <strong>Material:</strong> IPS e.max CAD
-                            </div>
-                            <div class="spec-item">
-                                <strong>Technology:</strong> PrograMill PM7
-                            </div>
-                            <div class="spec-item">
-                                <strong>Software:</strong> Ivoclar Digital Suite
-                            </div>
-                            <div class="spec-item">
-                                <strong>Production Time:</strong> 45 minutes
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-               
-
-            <div class="section" id="bo-hobby">
-                <h2>Mein Hobby: Ski</h2>
-                <p>Auf den Skiern kann ich alles um mich herum vergessen und ganz im Moment leben. Schon als Kind im Skiclub hat mich die Faszination für Geschwindigkeit und die Berge gepackt und bis heute nicht losgelassen.</p>
-                
-                <div class="hobby-interactive">
-                    <h3 style="margin-bottom: 20px;">📸 Photography Gallery</h3>
-                    <div class="upload-area" onclick="document.getElementById('bo-upload').click()">
-                        <input type="file" id="bo-upload" accept="image/*" onchange="handleUpload(event, 'bo')">
-                        <p style="color: #888; margin-bottom: 20px;">Share your photos with me! Click to upload or drag and drop</p>
-                        <button class="upload-btn">Choose File</button>
-                    </div>
-                    
-            
-                        <div class="hobby-item">
-                            <div class="project-image" aria-hidden="false">
-                                <img src="../images/Bo_Skifahren.jpg"
-                                     alt="On the slopes"
-                                     width="600" height="200"
-                                     style="width:600px; height:200px; object-fit: contain; display:block;">
-                            </div>
-                            <div class="hobby-item-overlay">
-                                <p>On the slopes</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2>Lass uns vernetzen</h2>
-                <p>Interessierst du dich für CAD/CAM-Dienstleistungen im Dentalbereich oder Webentwicklung? Ich freue mich immer darauf, über neue Projekte zu sprechen – sei es präzise Zahntechnik oder die Umsetzung innovativer digitaler Lösungen.</p>
-                <a href="mailto:bo@example.com" class="contact-btn">Get In Touch</a>
-            </div>
-        </div>
+    <!-- Sub Navigation -->
+    <div class="portfolio-nav">
+        <a href="#hero" class="active">Start</a>
+        <a href="#about">Über mich</a>
+        <a href="#skills">Skills</a>
+        <a href="#hobby">Bouldern</a>
     </div>
 
-    <script src="../scripts.js"></script>
+    <!-- Hero Section -->
+    <section id="hero" class="intro-section">
+        <div id="text-wrapper">
+            <h1>Bo Ryffel</h1>
+            <p>Junior Software Developer</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="content-section">
+        <div class="section-content">
+            <div class="about-container">
+                <div class="about-visual">
+                    <div class="about-image-container">
+                        <img src="../images/Bo_Hauptseite.jpg" alt="Bo Ryffel">
+                    </div>
+                    
+                    <!-- Social Links -->
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/boryffel/" class="social-btn instagram" aria-label="Instagram" target="_blank" rel="noopener">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.4"/>
+                                <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.4"/>
+                                <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/bo-ryffel-9255a4267?utm_source=share_via&utm_content=profile&utm_medium=member_android" class="social-btn linkedin" aria-label="LinkedIn" target="_blank" rel="noopener">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="2" y="2" width="20" height="20" rx="2" stroke="currentColor" stroke-width="1.4"/>
+                                <rect x="6" y="10" width="2.5" height="8" fill="currentColor"/>
+                                <path d="M10 10h2.4v1.1h.03c.33-.62 1.14-1.2 2.35-1.2 2.52 0 2.99 1.66 2.99 3.82V18h-2.6v-3.6c0-.86-.02-1.97-1.2-1.97-1.2 0-1.38.94-1.38 1.9V18H10V10z" fill="currentColor"/>
+                                <circle cx="7.3" cy="7" r="1.2" fill="currentColor"/>
+                            </svg>
+                        </a>
+                        <a href="mailto:bo.ryffel@outlook.com" class="social-btn outlook" aria-label="E-Mail" target="_self">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="2" y="5" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.4"/>
+                                <path d="M3 7.5l8.5 6L20 7.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h2>Über mich</h2>
+                    
+                    <div class="about-grid">
+                        <div class="about-card">
+                            <h4>👨‍💻 Persönlich</h4>
+                            <p>Ich bin 21 Jahre alt und wohne in Azmoos mit 2 älteren Geschwistern. In meiner Freizeit bin ich am liebsten in Bewegung – im Winter auf den Skiern, im Sommer auf dem Motorrad oder beim Bouldern.</p>
+                        </div>
+                        <div class="about-card">
+                            <h4>💼 Beruflich</h4>
+                            <p>Junior Software Developer bei Ivoclar Vivadent, wo ich meine Lehre absolviert habe. Heute verantworte ich die kompletten Backend Services für CAM-Software.</p>
+                        </div>
+                        <div class="about-card">
+                            <h4>🏆 Engagements</h4>
+                            <p>Experte bei SwissSkills und ehemaliger WorldSkills-Teilnehmer in IT Software Solutions for Business.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="content-section">
+        <div class="section-content">
+            <h2 class="skills-title">Skills & Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>💻 Softwareentwicklung</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">C#</span>
+                        <span class="skill-tag">Blazor</span>
+                        <span class="skill-tag">ABAP</span>
+                        <span class="skill-tag">.NET</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3>🚀 DevOps</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Release Management</span>
+                        <span class="skill-tag">Azure</span>
+                        <span class="skill-tag">CI/CD Pipelines</span>
+                        <span class="skill-tag">Git</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3>🦷 Dental CAD/CAM</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">3D Printing</span>
+                        <span class="skill-tag">PrograMill</span>
+                        <span class="skill-tag">CAM-Software</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hobby Section -->
+    <section id="hobby" class="content-section">
+        <div class="section-content">
+            <h2 class="hobby-title">Mein Hobby: Bouldern</h2>
+            <p class="hobby-desc">Beim Bouldern teste ich meine Grenzen. Jede Route ist ein neues Puzzle – körperlich und mental.</p>
+            
+            <div class="hobby-container">
+                <div class="canvas-wrapper">
+                    <canvas id="boulderCanvas" width="450" height="600"></canvas>
+                    <div class="grip-selector">
+                        <h4>Grifftyp auswählen:</h4>
+                        <div class="grip-buttons">
+                            <button class="grip-btn active" data-grip="jug" title="Jug - Henkel">
+                                <svg width="28" height="28" viewBox="0 0 28 28">
+                                    <path d="M4 18 Q4 8 14 8 Q24 8 24 18 Q24 24 14 24 Q4 24 4 18 Z" fill="#ff8c00" stroke="#cc7000" stroke-width="1.5"/>
+                                    <path d="M6 14 Q6 10 14 10 Q22 10 22 14" fill="none" stroke="#cc7000" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </button>
+                            <button class="grip-btn" data-grip="crimp" title="Crimp - Leiste">
+                                <svg width="28" height="28" viewBox="0 0 28 28">
+                                    <rect x="3" y="11" width="22" height="8" rx="2" fill="#ff6b00" stroke="#cc5500" stroke-width="1.5"/>
+                                    <line x1="5" y1="13" x2="23" y2="13" stroke="#cc5500" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                            </button>
+                            <button class="grip-btn" data-grip="sloper" title="Sloper - Aufleger">
+                                <svg width="28" height="28" viewBox="0 0 28 28">
+                                    <ellipse cx="14" cy="16" rx="11" ry="7" fill="#ffa500" stroke="#cc8400" stroke-width="1.5"/>
+                                    <ellipse cx="14" cy="14" rx="8" ry="4" fill="#ffb833" opacity="0.5"/>
+                                </svg>
+                            </button>
+                            <button class="grip-btn" data-grip="pocket" title="Pocket - Loch">
+                                <svg width="28" height="28" viewBox="0 0 28 28">
+                                    <rect x="4" y="8" width="20" height="14" rx="4" fill="#ffb733" stroke="#cc9229" stroke-width="1.5"/>
+                                    <circle cx="10" cy="15" r="3" fill="#8b5a00" stroke="#6b4500" stroke-width="1"/>
+                                    <circle cx="18" cy="15" r="3" fill="#8b5a00" stroke="#6b4500" stroke-width="1"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="rotation-control">
+                            <label>Rotation: <span class="rotation-value">0°</span></label>
+                            <input type="range" min="0" max="360" value="0" class="rotation-slider">
+                        </div>
+                    </div>
+                    <p class="canvas-hint">Klick zum platzieren • Rechtsklick zum löschen</p>
+                </div>
+                <div class="routes-panel">
+                    <h4>🏔️ Gespeicherte Routen</h4>
+                    <div id="routesList">
+                        <p style="color: #999; font-style: italic;">Noch keine Routen gespeichert</p>
+                    </div>
+                    <div class="route-input-group">
+                        <input type="text" id="routeName" placeholder="Route benennen...">
+                        <button id="saveRoute" class="control-btn">💾</button>
+                    </div>
+                    <button id="clearCanvas" class="control-btn clear-btn">🔄 Leeren</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-center">
+                <div class="footer-logo">BO & MORRIS</div>
+                <p>Ein Schulprojekt im GLIN Modul</p>
+            </div>
+            <div class="footer-right">
+                <div class="footer-links">
+                    <a href="bo_portfolio.html">Bo</a>
+                    <a href="morris_portfolio.html">Morris</a>
+                </div>
+                <p class="copyright">© 2025 Bo & Morris – Schulprojekt Portfolio</p>
+            </div>
+        </div>
+    </footer>
+
     <script>
-        // 3D Tooth Model with realistic rendering
-        let toothScene, toothCamera, toothRenderer, toothMesh;
-        let controls = { rotationX: 0, rotationY: 0, isDragging: false };
-        let previousMouse = { x: 0, y: 0 };
+        // Parallax effect on scroll
+        const parallaxContainer = document.querySelector('.parallax-container');
+        const mountains = document.querySelectorAll('.mountain');
 
-        function initTooth3D() {
-            const container = document.getElementById('tooth-canvas');
-            if (!container) return;
-
-            // Scene setup
-            toothScene = new THREE.Scene();
-            toothScene.background = new THREE.Color(0x0a0a0a);
-
-            // Camera
-            toothCamera = new THREE.PerspectiveCamera(50, container.clientWidth / 500, 0.1, 1000);
-            toothCamera.position.set(0, 0, 6);
-
-            // Renderer with antialiasing
-            toothRenderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-            toothRenderer.setSize(container.clientWidth, 500);
-            toothRenderer.setPixelRatio(window.devicePixelRatio);
-            toothRenderer.shadowMap.enabled = true;
-            toothRenderer.shadowMap.type = THREE.PCFSoftShadowMap;
-            container.appendChild(toothRenderer.domElement);
-
-            // Lighting setup for realistic tooth appearance
-            const ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
-            toothScene.add(ambientLight);
-
-            const mainLight = new THREE.DirectionalLight(0xffffff, 0.8);
-            mainLight.position.set(5, 8, 5);
-            mainLight.castShadow = true;
-            toothScene.add(mainLight);
-
-            const fillLight = new THREE.DirectionalLight(0xb3d9ff, 0.3);
-            fillLight.position.set(-5, 0, -5);
-            toothScene.add(fillLight);
-
-            const rimLight = new THREE.PointLight(0x88ccff, 0.6);
-            rimLight.position.set(0, 5, -5);
-            toothScene.add(rimLight);
-
-            // Create detailed tooth group
-            const toothGroup = new THREE.Group();
-
-            // Crown - main visible part with more anatomical shape
-            const crownGeometry = new THREE.SphereGeometry(1.2, 64, 64);
-            
-            // Modify vertices for more tooth-like shape
-            const positions = crownGeometry.attributes.position;
-            for (let i = 0; i < positions.count; i++) {
-                const x = positions.getX(i);
-                const y = positions.getY(i);
-                const z = positions.getZ(i);
-                
-                // Create cusps and grooves
-                const angle = Math.atan2(z, x);
-                const radius = Math.sqrt(x * x + z * z);
-                const cusp = Math.sin(angle * 4) * 0.1;
-                
-                positions.setX(i, x * (1 + cusp));
-                positions.setZ(i, z * (1 + cusp));
-                
-                // Taper towards bottom
-                if (y < 0) {
-                    const taper = 1 - Math.abs(y) * 0.3;
-                    positions.setX(i, x * taper);
-                    positions.setZ(i, z * taper);
-                }
-            }
-            crownGeometry.computeVertexNormals();
-
-            // Realistic tooth material
-            const crownMaterial = new THREE.MeshPhongMaterial({
-                color: 0xfaf8f3,
-                shininess: 120,
-                specular: 0xffffff,
-                reflectivity: 0.3,
-                emissive: 0x111111,
+        window.addEventListener('scroll', () => {
+            const scrollY = window.pageYOffset;
+            mountains.forEach((mountain, index) => {
+                const speed = 0.5 + (index * 0.1);
+                mountain.style.transform = `translateY(${scrollY * speed}px)`;
             });
-
-            const crown = new THREE.Mesh(crownGeometry, crownMaterial);
-            crown.position.y = 0.8;
-            crown.castShadow = true;
-            crown.receiveShadow = true;
-            toothGroup.add(crown);
-
-            // Tooth neck (CEJ - Cemento-Enamel Junction)
-            const neckGeometry = new THREE.CylinderGeometry(0.7, 0.65, 0.4, 64);
-            const neckMaterial = new THREE.MeshPhongMaterial({
-                color: 0xf5f0e8,
-                shininess: 80,
-                specular: 0xcccccc,
-            });
-            const neck = new THREE.Mesh(neckGeometry, neckMaterial);
-            neck.position.y = 0;
-            neck.castShadow = true;
-            toothGroup.add(neck);
-
-            // Root - anatomically accurate
-            const rootGeometry = new THREE.CylinderGeometry(0.65, 0.35, 2.5, 64);
-            const rootPositions = rootGeometry.attributes.position;
-            
-            // Add slight curve to root
-            for (let i = 0; i < rootPositions.count; i++) {
-                const y = rootPositions.getY(i);
-                if (y < 0) {
-                    const curve = Math.pow(Math.abs(y) / 1.25, 1.5) * 0.15;
-                    const x = rootPositions.getX(i);
-                    rootPositions.setX(i, x + curve);
-                }
-            }
-            rootGeometry.computeVertexNormals();
-
-            const rootMaterial = new THREE.MeshPhongMaterial({
-                color: 0xf0e6d2,
-                shininess: 50,
-                specular: 0x999999,
-            });
-            const root = new THREE.Mesh(rootGeometry, rootMaterial);
-            root.position.y = -1.4;
-            root.castShadow = true;
-            toothGroup.add(root);
-
-            // Add occlusal surface details (cusps)
-            const cuspGeometry = new THREE.SphereGeometry(0.35, 32, 32);
-            const cuspPositions = [
-                { x: 0.4, y: 1.3, z: 0.4 },
-                { x: -0.4, y: 1.3, z: 0.4 },
-                { x: 0.4, y: 1.3, z: -0.4 },
-                { x: -0.4, y: 1.3, z: -0.4 },
-            ];
-
-            cuspPositions.forEach(pos => {
-                const cusp = new THREE.Mesh(cuspGeometry, crownMaterial);
-                cusp.position.set(pos.x, pos.y, pos.z);
-                cusp.scale.y = 0.6;
-                cusp.castShadow = true;
-                toothGroup.add(cusp);
-            });
-
-            // Central fissure
-            const fissureGeometry = new THREE.BoxGeometry(0.1, 0.15, 0.8);
-            const fissureMaterial = new THREE.MeshPhongMaterial({
-                color: 0xe8e0d5,
-                shininess: 60,
-            });
-            const fissure = new THREE.Mesh(fissureGeometry, fissureMaterial);
-            fissure.position.set(0, 1.35, 0);
-            toothGroup.add(fissure);
-
-            toothMesh = toothGroup;
-            toothScene.add(toothMesh);
-
-            // Ground plane for shadow
-            const planeGeometry = new THREE.PlaneGeometry(10, 10);
-            const planeMaterial = new THREE.ShadowMaterial({ opacity: 0.3 });
-            const plane = new THREE.Mesh(planeGeometry, planeMaterial);
-            plane.rotation.x = -Math.PI / 2;
-            plane.position.y = -2.5;
-            plane.receiveShadow = true;
-            toothScene.add(plane);
-
-            // Mouse interaction
-            container.addEventListener('mousedown', onMouseDown);
-            container.addEventListener('mousemove', onMouseMove);
-            container.addEventListener('mouseup', onMouseUp);
-            container.addEventListener('mouseleave', onMouseUp);
-            container.addEventListener('wheel', onWheel);
-
-            // Touch support
-            container.addEventListener('touchstart', onTouchStart);
-            container.addEventListener('touchmove', onTouchMove);
-            container.addEventListener('touchend', onTouchEnd);
-
-            animateTooth();
-        }
-
-        function onMouseDown(e) {
-            controls.isDragging = true;
-            previousMouse = { x: e.clientX, y: e.clientY };
-        }
-
-        function onMouseMove(e) {
-            if (!controls.isDragging) return;
-
-            const deltaX = e.clientX - previousMouse.x;
-            const deltaY = e.clientY - previousMouse.y;
-
-            controls.rotationY += deltaX * 0.005;
-            controls.rotationX += deltaY * 0.005;
-
-            // Limit vertical rotation
-            controls.rotationX = Math.max(-Math.PI / 2, Math.min(Math.PI / 2, controls.rotationX));
-
-            previousMouse = { x: e.clientX, y: e.clientY };
-        }
-
-        function onMouseUp() {
-            controls.isDragging = false;
-        }
-
-        function onWheel(e) {
-            e.preventDefault();
-            toothCamera.position.z += e.deltaY * 0.01;
-            toothCamera.position.z = Math.max(3, Math.min(12, toothCamera.position.z));
-        }
-
-        function onTouchStart(e) {
-            if (e.touches.length === 1) {
-                controls.isDragging = true;
-                previousMouse = { x: e.touches[0].clientX, y: e.touches[0].clientY };
-            }
-        }
-
-        function onTouchMove(e) {
-            if (!controls.isDragging || e.touches.length !== 1) return;
-
-            const deltaX = e.touches[0].clientX - previousMouse.x;
-            const deltaY = e.touches[0].clientY - previousMouse.y;
-
-            controls.rotationY += deltaX * 0.005;
-            controls.rotationX += deltaY * 0.005;
-
-            controls.rotationX = Math.max(-Math.PI / 2, Math.min(Math.PI / 2, controls.rotationX));
-
-            previousMouse = { x: e.touches[0].clientX, y: e.touches[0].clientY };
-        }
-
-        function onTouchEnd() {
-            controls.isDragging = false;
-        }
-
-        function animateTooth() {
-            requestAnimationFrame(animateTooth);
-
-            // Smooth rotation
-            toothMesh.rotation.x += (controls.rotationX - toothMesh.rotation.x) * 0.1;
-            toothMesh.rotation.y += (controls.rotationY - toothMesh.rotation.y) * 0.1;
-
-            // Gentle idle animation when not dragging
-            if (!controls.isDragging) {
-                toothMesh.rotation.y += 0.001;
-            }
-
-            toothRenderer.render(toothScene, toothCamera);
-        }
-
-        function rotateTooth(direction) {
-            if (direction === 'left') {
-                controls.rotationY -= 0.5;
-            } else if (direction === 'right') {
-                controls.rotationY += 0.5;
-            } else if (direction === 'up') {
-                controls.rotationX -= 0.3;
-            } else if (direction === 'down') {
-                controls.rotationX += 0.3;
-            }
-            controls.rotationX = Math.max(-Math.PI / 2, Math.min(Math.PI / 2, controls.rotationX));
-        }
-
-        function resetToothView() {
-            controls.rotationX = 0;
-            controls.rotationY = 0;
-            toothCamera.position.z = 6;
-        }
-
-        // Initialize on load
-        window.addEventListener('load', initTooth3D);
-        
-        // Handle resize
-        window.addEventListener('resize', () => {
-            const container = document.getElementById('tooth-canvas');
-            if (container && toothRenderer) {
-                toothRenderer.setSize(container.clientWidth, 500);
-                toothCamera.aspect = container.clientWidth / 500;
-                toothCamera.updateProjectionMatrix();
-            }
         });
+
+        // Smooth scroll and active nav link
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            document.querySelectorAll('section').forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 300) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            // Update sub-nav active state
+            document.querySelectorAll('.portfolio-nav a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Boulder Routes Canvas
+        const canvas = document.getElementById('boulderCanvas');
+        const ctx = canvas.getContext('2d');
+        let holds = [];
+        let routes = JSON.parse(localStorage.getItem('boulderRoutes')) || [];
+        let selectedGrip = 'jug';
+        let selectedRotation = 0;
+
+        const GRIP_TYPES = {
+            jug: { color: '#ff8c00', size: 20 },
+            crimp: { color: '#ff6b00', size: 16 },
+            sloper: { color: '#ffa500', size: 22 },
+            pocket: { color: '#ffb733', size: 18 }
+        };
+
+        // Grip selector
+        document.querySelectorAll('.grip-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.grip-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                selectedGrip = this.dataset.grip;
+                document.querySelector('.rotation-slider').value = 0;
+                selectedRotation = 0;
+                updateRotationDisplay();
+            });
+        });
+
+        // Rotation slider
+        document.querySelector('.rotation-slider').addEventListener('input', function() {
+            selectedRotation = parseInt(this.value);
+            updateRotationDisplay();
+        });
+
+        function updateRotationDisplay() {
+            document.querySelector('.rotation-value').textContent = selectedRotation + '°';
+        }
+
+        function drawGrip(x, y, type, rotation) {
+            const gripData = GRIP_TYPES[type];
+            const size = gripData.size;
+
+            ctx.save();
+            ctx.translate(x, y);
+            ctx.rotate((rotation * Math.PI) / 180);
+
+            switch(type) {
+                case 'jug':
+                    // Jug - bucket/handle shape with lip
+                    ctx.fillStyle = gripData.color;
+                    ctx.beginPath();
+                    ctx.moveTo(-size, size * 0.3);
+                    ctx.quadraticCurveTo(-size, -size * 0.8, 0, -size * 0.8);
+                    ctx.quadraticCurveTo(size, -size * 0.8, size, size * 0.3);
+                    ctx.quadraticCurveTo(size, size, 0, size);
+                    ctx.quadraticCurveTo(-size, size, -size, size * 0.3);
+                    ctx.closePath();
+                    ctx.fill();
+                    ctx.strokeStyle = '#cc7000';
+                    ctx.lineWidth = 2;
+                    ctx.stroke();
+                    // Lip/indent
+                    ctx.beginPath();
+                    ctx.moveTo(-size * 0.7, -size * 0.3);
+                    ctx.quadraticCurveTo(0, -size * 0.5, size * 0.7, -size * 0.3);
+                    ctx.strokeStyle = '#cc7000';
+                    ctx.lineWidth = 2.5;
+                    ctx.stroke();
+                    break;
+                
+                case 'crimp':
+                    // Crimp - thin edge/ledge
+                    ctx.fillStyle = gripData.color;
+                    ctx.beginPath();
+                    ctx.roundRect(-size * 1.2, -size * 0.4, size * 2.4, size * 0.9, 3);
+                    ctx.fill();
+                    ctx.strokeStyle = '#cc5500';
+                    ctx.lineWidth = 1.5;
+                    ctx.stroke();
+                    // Edge line
+                    ctx.beginPath();
+                    ctx.moveTo(-size, -size * 0.2);
+                    ctx.lineTo(size, -size * 0.2);
+                    ctx.strokeStyle = '#cc5500';
+                    ctx.lineWidth = 2;
+                    ctx.stroke();
+                    break;
+                
+                case 'sloper':
+                    // Sloper - smooth rounded dome
+                    ctx.fillStyle = gripData.color;
+                    ctx.beginPath();
+                    ctx.ellipse(0, 0, size * 1.3, size * 0.8, 0, 0, Math.PI * 2);
+                    ctx.fill();
+                    ctx.strokeStyle = '#cc8400';
+                    ctx.lineWidth = 2;
+                    ctx.stroke();
+                    // Highlight for dome effect
+                    ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+                    ctx.beginPath();
+                    ctx.ellipse(-size * 0.3, -size * 0.2, size * 0.6, size * 0.35, -0.3, 0, Math.PI * 2);
+                    ctx.fill();
+                    break;
+                
+                case 'pocket':
+                    // Pocket - hold with finger holes
+                    ctx.fillStyle = gripData.color;
+                    ctx.beginPath();
+                    ctx.roundRect(-size * 1.1, -size * 0.7, size * 2.2, size * 1.4, 5);
+                    ctx.fill();
+                    ctx.strokeStyle = '#cc9229';
+                    ctx.lineWidth = 1.5;
+                    ctx.stroke();
+                    // Two finger holes
+                    ctx.fillStyle = '#6b4500';
+                    ctx.beginPath();
+                    ctx.arc(-size * 0.4, 0, size * 0.35, 0, Math.PI * 2);
+                    ctx.fill();
+                    ctx.beginPath();
+                    ctx.arc(size * 0.4, 0, size * 0.35, 0, Math.PI * 2);
+                    ctx.fill();
+                    // Hole shadows
+                    ctx.strokeStyle = '#4a3000';
+                    ctx.lineWidth = 1;
+                    ctx.beginPath();
+                    ctx.arc(-size * 0.4, 0, size * 0.35, 0, Math.PI * 2);
+                    ctx.stroke();
+                    ctx.beginPath();
+                    ctx.arc(size * 0.4, 0, size * 0.35, 0, Math.PI * 2);
+                    ctx.stroke();
+                    break;
+            }
+
+            ctx.restore();
+        }
+
+        function drawCanvas() {
+            ctx.fillStyle = '#ffffff';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            ctx.strokeStyle = '#e8e8e8';
+            ctx.lineWidth = 1;
+            for (let i = 0; i < canvas.width; i += 45) {
+                ctx.beginPath();
+                ctx.moveTo(i, 0);
+                ctx.lineTo(i, canvas.height);
+                ctx.stroke();
+            }
+            for (let i = 0; i < canvas.height; i += 45) {
+                ctx.beginPath();
+                ctx.moveTo(0, i);
+                ctx.lineTo(canvas.width, i);
+                ctx.stroke();
+            }
+            
+            holds.forEach((hold) => {
+                drawGrip(hold.x, hold.y, hold.type, hold.rotation);
+            });
+        }
+
+        canvas.addEventListener('click', (e) => {
+            const rect = canvas.getBoundingClientRect();
+            const scaleX = canvas.width / rect.width;
+            const scaleY = canvas.height / rect.height;
+            const x = (e.clientX - rect.left) * scaleX;
+            const y = (e.clientY - rect.top) * scaleY;
+            holds.push({ x, y, type: selectedGrip, rotation: selectedRotation });
+            drawCanvas();
+        });
+
+        canvas.addEventListener('contextmenu', (e) => {
+            e.preventDefault();
+            const rect = canvas.getBoundingClientRect();
+            const scaleX = canvas.width / rect.width;
+            const scaleY = canvas.height / rect.height;
+            const x = (e.clientX - rect.left) * scaleX;
+            const y = (e.clientY - rect.top) * scaleY;
+            
+            holds = holds.filter(hold => {
+                const dist = Math.sqrt((hold.x - x) ** 2 + (hold.y - y) ** 2);
+                return dist > 30;
+            });
+            drawCanvas();
+        });
+
+        document.getElementById('saveRoute').addEventListener('click', () => {
+            const name = document.getElementById('routeName').value.trim();
+            if (!name) {
+                alert('Bitte gib der Route einen Namen!');
+                return;
+            }
+            if (holds.length < 2) {
+                alert('Mindestens 2 Griffe erforderlich!');
+                return;
+            }
+            
+            const route = {
+                id: Date.now(),
+                name: name,
+                holds: [...holds],
+                difficulty: estimateDifficulty(holds.length)
+            };
+            
+            routes.push(route);
+            localStorage.setItem('boulderRoutes', JSON.stringify(routes));
+            document.getElementById('routeName').value = '';
+            holds = [];
+            drawCanvas();
+            updateRoutesList();
+        });
+
+        document.getElementById('clearCanvas').addEventListener('click', () => {
+            holds = [];
+            drawCanvas();
+        });
+
+        function estimateDifficulty(gripCount) {
+            if (gripCount < 5) return '🟢 Einfach';
+            if (gripCount < 10) return '🟡 Mittel';
+            if (gripCount < 15) return '🟠 Schwer';
+            return '🔴 Sehr schwer';
+        }
+
+        function updateRoutesList() {
+            const list = document.getElementById('routesList');
+            if (routes.length === 0) {
+                list.innerHTML = '<p style="color: #999; font-style: italic;">Noch keine Routen gespeichert</p>';
+                return;
+            }
+            
+            list.innerHTML = routes.map((route, index) => `
+                <div class="route-item">
+                    <div>
+                        <strong>${route.name}</strong>
+                        <p>${route.difficulty} • ${route.holds.length} Griffe</p>
+                    </div>
+                    <div class="route-buttons">
+                        <button class="route-btn route-btn-load" onclick="window.loadRoute(${index})">Laden</button>
+                        <button class="route-btn route-btn-delete" onclick="window.deleteRoute(${index})">✕</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function loadRoute(index) {
+            holds = JSON.parse(JSON.stringify(routes[index].holds));
+            document.getElementById('routeName').value = routes[index].name;
+            drawCanvas();
+        }
+
+        function deleteRoute(index) {
+            if (confirm('Route wirklich löschen?')) {
+                routes.splice(index, 1);
+                localStorage.setItem('boulderRoutes', JSON.stringify(routes));
+                updateRoutesList();
+            }
+        }
+
+        window.loadRoute = loadRoute;
+        window.deleteRoute = deleteRoute;
+
+        drawCanvas();
+        updateRoutesList();
     </script>
 </body>
 </html>
