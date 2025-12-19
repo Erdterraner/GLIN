@@ -30,6 +30,7 @@
         <a href="#about">Über mich</a>
         <a href="#skills">Skills</a>
         <a href="#hobby">Trailrunning</a>
+        <a href="#routes">Routen</a>
         <a href="#contact">Kontakt</a>
     </div>
 
@@ -139,30 +140,73 @@
         </div>
     </section>
 
-    <!-- Hobby Section -->
-    <section id="hobby" class="content-section">
+
+    <section id="routes" class="content-section">
         <div class="section-content">
-            <h2 class="hobby-title">Mein Hobby: Trailrunning</h2>
+            <h2 class="hobby-title">Mein Hobby: Trailrunning/h2>
             <p class="hobby-desc">In meiner Freizeit zieht es mich in die Berge. Dort tanke ich Energie, geniesse die Natur und finde den perfekten Ausgleich zum Arbeitsalltag. Trailrunning fühlt sich an wie Freiheit pur. Mit jedem Schritt spürt man den Boden, den Wind und die Kraft der Natur.</p>
             
-            <div class="hobby-gallery">
-                <div class="hobby-item">
-                    <img src="../images/Mo_Trail1.jpg" alt="Trail Running 1">
-                    <div class="hobby-item-overlay">
-                        <p>Mountain Trail</p>
-                    </div>
+            <div class="routes-container">
+                <div class="route-form-card">
+                    <h3>🗺️ Neue Route hinzufügen</h3>
+                    <form id="routeForm" class="route-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="routeName">Routenname</label>
+                                <input type="text" id="routeName" name="name" placeholder="z.B. Alpstein Rundweg" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="routeLocation">Ort</label>
+                                <input type="text" id="routeLocation" name="location" placeholder="z.B. Appenzell" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="routeDistance">Distanz (km)</label>
+                                <input type="number" id="routeDistance" name="distance" step="0.1" min="0" placeholder="15.5" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="routeElevation">Anstieg (m)</label>
+                                <input type="number" id="routeElevation" name="elevation" min="0" placeholder="1200" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="routeDecline">Abstieg (m)</label>
+                                <input type="number" id="routeDecline" name="decline" min="0" placeholder="1200" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="routeDifficulty">Schwierigkeit</label>
+                                <select id="routeDifficulty" name="difficulty" required>
+                                    <option value="">Bitte wählen...</option>
+                                    <option value="Einfach">🟢 Einfach</option>
+                                    <option value="Mittel">🟡 Mittel</option>
+                                    <option value="Schwer">🔴 Schwer</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="routePicture">Bild URL (optional)</label>
+                                <input type="text" id="routePicture" name="picture" placeholder="https://example.com/bild.jpg">
+                            </div>
+                        </div>
+                        <button type="submit" class="submit-route-btn">
+                            <span>➕</span> Route hinzufügen
+                        </button>
+                    </form>
                 </div>
-                <div class="hobby-item">
-                    <img src="../images/Mo_Trail2.jpg" alt="Trail Running 2">
-                    <div class="hobby-item-overlay">
-                        <p>Sunset Run</p>
+
+                <div class="routes-list-container">
+                    <div class="routes-header">
+                        <h3>📍 Gespeicherte Routen</h3>
+                        <button id="clearAllRoutes" class="clear-all-btn" title="Alle Routen löschen">
+                            🗑️ Alle löschen
+                        </button>
                     </div>
-                </div>
-                <div class="hobby-item">
-                    <img src="../images/Mo_Trail3.jpg" alt="Trail Running 3">
-                    <div class="hobby-item-overlay">
-                        <p>Alpine Adventure</p>
+                    <div id="routesGrid" class="routes-grid">
                     </div>
+                    <p id="noRoutesMessage" class="no-routes-message" style="display: none;">
+                        Noch keine Routen vorhanden. Füge deine erste Route hinzu!
+                    </p>
                 </div>
             </div>
         </div>
@@ -234,6 +278,204 @@
                 }
             });
         });
+
+        // ==========================================
+        // Routes Management System
+        // ==========================================
+        
+        const STORAGE_KEY = 'morris_trailrunning_routes';
+        
+        // Default routes (pre-populated)
+        const defaultRoutes = [
+            {
+                id: 'default-1',
+                name: 'Säntis Gipfelsturm',
+                location: 'Appenzell',
+                distance: 18.5,
+                elevation: 1650,
+                decline: 1650,
+                difficulty: 'Schwer',
+                picture: '../images/Mo_Trail1.jpg',
+                isDefault: true
+            },
+            {
+                id: 'default-2',
+                name: 'Flumserberg Panorama',
+                location: 'Flumserberg',
+                distance: 12.3,
+                elevation: 890,
+                decline: 890,
+                difficulty: 'Mittel',
+                picture: '../images/Mo_Trail2.jpg',
+                isDefault: true
+            },
+            {
+                id: 'default-3',
+                name: 'Saint-Jean-Cap-Ferrat-Nice',
+                location: 'Nizza',
+                distance: 23,
+                elevation: 680,
+                decline: 680,
+                difficulty: 'Mittel',
+                picture: '../images/Mo_Trail3.jpg',
+                isDefault: true
+            }
+        ];
+
+        // Load routes from localStorage
+        function loadRoutes() {
+            const stored = localStorage.getItem(STORAGE_KEY);
+            if (stored) {
+                return JSON.parse(stored);
+            }
+            // First time: initialize with default routes
+            saveRoutes(defaultRoutes);
+            return defaultRoutes;
+        }
+
+        // Save routes to localStorage
+        function saveRoutes(routes) {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(routes));
+        }
+
+        // Generate unique ID
+        function generateId() {
+            return 'route-' + Date.now() + '-' + Math.random().toString(36).substr(2, 9);
+        }
+
+        // Get difficulty badge class and emoji
+        function getDifficultyInfo(difficulty) {
+            switch(difficulty) {
+                case 'Einfach': return { class: 'difficulty-easy', emoji: '🟢' };
+                case 'Mittel': return { class: 'difficulty-medium', emoji: '🟡' };
+                case 'Schwer': return { class: 'difficulty-hard', emoji: '🔴' };
+                default: return { class: '', emoji: '' };
+            }
+        }
+
+        // Render all routes
+        function renderRoutes() {
+            const routes = loadRoutes();
+            const grid = document.getElementById('routesGrid');
+            const noRoutesMsg = document.getElementById('noRoutesMessage');
+            
+            if (routes.length === 0) {
+                grid.innerHTML = '';
+                noRoutesMsg.style.display = 'block';
+                return;
+            }
+            
+            noRoutesMsg.style.display = 'none';
+            
+            grid.innerHTML = routes.map(route => {
+                const diffInfo = getDifficultyInfo(route.difficulty);
+                const hasImage = route.picture && route.picture.trim() !== '';
+                
+                return `
+                    <div class="route-card ${diffInfo.class}" data-id="${route.id}">
+                        ${hasImage ? `
+                            <div class="route-image">
+                                <img src="${route.picture}" alt="${route.name}" onerror="this.parentElement.innerHTML='<div class=\\'route-image-placeholder\\'>🏔️</div>'">
+                            </div>
+                        ` : `
+                            <div class="route-image">
+                                <div class="route-image-placeholder">🏔️</div>
+                            </div>
+                        `}
+                        <div class="route-content">
+                            <div class="route-header">
+                                <h4>${route.name}</h4>
+                                <span class="difficulty-badge ${diffInfo.class}">${diffInfo.emoji} ${route.difficulty}</span>
+                            </div>
+                            <p class="route-location">📍 ${route.location}</p>
+                            <div class="route-stats">
+                                <div class="stat">
+                                    <span class="stat-icon">🛤️</span>
+                                    <span class="stat-value">${route.distance} km</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-icon">⬆️</span>
+                                    <span class="stat-value">${route.elevation} m</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-icon">⬇️</span>
+                                    <span class="stat-value">${route.decline} m</span>
+                                </div>
+                            </div>
+                            <button class="delete-route-btn" onclick="deleteRoute('${route.id}')" title="Route löschen">
+                                🗑️ Löschen
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Add new route
+        function addRoute(routeData) {
+            const routes = loadRoutes();
+            const newRoute = {
+                id: generateId(),
+                ...routeData,
+                isDefault: false
+            };
+            routes.unshift(newRoute); // Add to beginning
+            saveRoutes(routes);
+            renderRoutes();
+        }
+
+        // Delete route
+        function deleteRoute(id) {
+            if (!confirm('Möchtest du diese Route wirklich löschen?')) return;
+            
+            const routes = loadRoutes();
+            const filtered = routes.filter(r => r.id !== id);
+            saveRoutes(filtered);
+            renderRoutes();
+        }
+
+        // Clear all routes
+        function clearAllRoutes() {
+            if (!confirm('Möchtest du wirklich ALLE Routen löschen? Diese Aktion kann nicht rückgängig gemacht werden.')) return;
+            
+            saveRoutes([]);
+            renderRoutes();
+        }
+
+        // Reset to default routes
+        function resetToDefaults() {
+            if (!confirm('Alle benutzerdefinierten Routen werden gelöscht und die Standard-Routen wiederhergestellt. Fortfahren?')) return;
+            
+            saveRoutes(defaultRoutes);
+            renderRoutes();
+        }
+
+        // Form submission handler
+        document.getElementById('routeForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                name: document.getElementById('routeName').value.trim(),
+                location: document.getElementById('routeLocation').value.trim(),
+                distance: parseFloat(document.getElementById('routeDistance').value),
+                elevation: parseInt(document.getElementById('routeElevation').value),
+                decline: parseInt(document.getElementById('routeDecline').value),
+                difficulty: document.getElementById('routeDifficulty').value,
+                picture: document.getElementById('routePicture').value.trim()
+            };
+            
+            addRoute(formData);
+            this.reset();
+            
+            // Scroll to routes list
+            document.getElementById('routesGrid').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        // Clear all button handler
+        document.getElementById('clearAllRoutes').addEventListener('click', clearAllRoutes);
+
+        // Initialize routes on page load
+        document.addEventListener('DOMContentLoaded', renderRoutes);
     </script>
 </body>
 </html>
