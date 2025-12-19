@@ -1,20 +1,66 @@
 <!DOCTYPE html>
+<!--
+    =====================================================
+    Bo & Morris Portfolio - Startseite
+    =====================================================
+    
+    Editor: Visual Studio Code / Cursor
+    Browser: Getestet in Chrome, Safari, Edge
+    
+    Autoren: Morris Deiss und Bo Ryffel
+    Erstellungsdatum: Dezember 2025
+    
+    JavaScript-Kenntnisse: Lehre als Applikationsentwickler (Bo Ryffel).
+    
+    =====================================================
+    QUELLENANGABEN
+    =====================================================
+    
+    Bilder:
+    - Bo_Hauptseite.jpg: Eigenes Foto (Bo Ryffel)
+    - Mo_Hauptseite.jpg: Eigenes Foto (Morris Deiss)
+    - Mo_Trail3.jpg: Eigenes Foto (Morris Deiss)
+    - Logo_rund.png: Eigene Erstellung
+    
+    Videos:
+    - hero_video1.mp4: von Pexels (pexels.com)
+    - hero_video2.mp4: von Pexels (pexels.com)
+    - hero_video3.mp4: von Pexels (pexels.com)
+    
+    Externe Bilder (Morris Portfolio - Trailrunning Routen):
+    - KURZA Trail Run Bild: von https://www.trailrunchur.ch/kurza 
+    - UFFA Trail Run Bild: von https://www.trailrunchur.ch/uffa 
+    
+    Code & Frameworks:
+    - Kein externes Framework verwendet
+    - Vanilla HTML, CSS und JavaScript
+    
+    Schriftarten:
+    - Segoe UI (System-Schriftart)
+    
+    Icons:
+    - SVG-Icons: Eigene Erstellung
+    
+    =====================================================
+-->
 <html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Morris Deiss, Bo Ryffel">
+    <meta name="date" content="2025-12-19">
+    <meta name="keywords" content="Portfolio, Bo Ryffel, Morris Deiss, Software Developer, Banker, Ivoclar, Zürcher Kantonalbank, Schulprojekt, GLIN, Trailrunning, Bouldern">
+    <meta name="description" content="Portfolio-Website von Bo Ryffel und Morris Deiss. Entdecken Sie unsere Projekte, Skills und Leidenschaften - ein Schulprojekt im GLIN Modul.">
     <title>Bo & Morris Portfolio</title>
     <link rel="stylesheet" href="src/styles.css">
 </head>
 <body>
-    <!-- Parallax Mountains Background -->
     <div class="parallax-container">
         <div class="mountain mountain-1"></div>
         <div class="mountain mountain-2"></div>
         <div class="mountain mountain-3"></div>
     </div>
 
-    <!-- Navigation -->
     <nav>
         <img src="src/images/Logo_rund.png" class="logo-img" alt="Logo">
         <ul class="nav-links">
@@ -24,7 +70,6 @@
         </ul>
     </nav>
 
-    <!-- Hero Section -->
     <section id="home" class="hero-section video-hero">
         <div class="video-container">
             <video class="hero-video active" muted loop autoplay playsinline>
@@ -62,7 +107,6 @@
         </div>
     </section>
 
-    <!-- Portfolio Section -->
     <section id="portfolio" class="portfolio-section">
         <div class="portfolio-container">
             <h2 class="section-title">Lerne uns kennen</h2>
@@ -94,7 +138,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-center">
@@ -116,9 +159,7 @@
         const videos = document.querySelectorAll('.hero-video');
         const dots = document.querySelectorAll('.dot');
 
-        // Initialize on page load
         document.addEventListener('DOMContentLoaded', function() {
-            // Ensure first video plays
             if (videos.length > 0) {
                 videos.forEach((video, i) => {
                     if (i === 0) {
@@ -172,7 +213,6 @@
             }
         }
 
-        // Parallax effect on scroll
         window.addEventListener('scroll', () => {
             const mountains = document.querySelectorAll('.mountain');
             const scrollY = window.pageYOffset;
@@ -182,7 +222,6 @@
             });
         });
 
-        // Update active nav link on scroll
         window.addEventListener('scroll', () => {
             let current = '';
             document.querySelectorAll('section').forEach(section => {

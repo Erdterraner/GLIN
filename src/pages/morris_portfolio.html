@@ -3,18 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Morris Deiss, Bo Ryffel">
+    <meta name="date" content="2025-12-19">
+    <meta name="keywords" content="Morris Deiss, Portfolio, Banker, Zürcher Kantonalbank, Trailrunning, Sachbearbeiter, Juristische Personen, GLIN">
+    <meta name="description" content="Portfolio von Morris Deiss - Sachbearbeiter Juristische Personen bei der Zürcher Kantonalbank. Entdecken Sie meine Skills, Erfahrungen und meine Leidenschaft für Trailrunning.">
     <title>Morris - Portfolio</title>
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-    <!-- Parallax Mountains Background -->
     <div class="parallax-container">
         <div class="mountain mountain-1"></div>
         <div class="mountain mountain-2"></div>
         <div class="mountain mountain-3"></div>
     </div>
 
-    <!-- Main Navigation -->
     <nav>
         <img src="../images/Logo_rund.png" class="logo-img" alt="Logo">
         <ul class="nav-links">
@@ -24,7 +26,6 @@
         </ul>
     </nav>
 
-    <!-- Sub Navigation -->
     <div class="portfolio-nav">
         <a href="#hero" class="active">Start</a>
         <a href="#about">Über mich</a>
@@ -34,7 +35,6 @@
         <a href="#contact">Kontakt</a>
     </div>
 
-    <!-- Hero Section -->
     <section id="hero" class="intro-section">
         <div id="text-wrapper">
             <h1>Morris Deiss</h1>
@@ -42,7 +42,6 @@
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="about" class="content-section">
         <div class="section-content">
             <div class="about-container">
@@ -103,7 +102,6 @@
         </div>
     </section>
 
-    <!-- Skills Section -->
     <section id="skills" class="content-section">
         <div class="section-content">
             <h2 class="skills-title">Skills & Expertise</h2>
@@ -212,7 +210,6 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact" class="content-section">
         <div class="section-content" style="text-align: center;">
             <h2 class="skills-title">Trainingssession buchen</h2>
@@ -221,7 +218,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-center">
@@ -239,7 +235,6 @@
     </footer>
 
     <script>
-        // Parallax effect on scroll
         window.addEventListener('scroll', () => {
             const mountains = document.querySelectorAll('.mountain');
             const scrollY = window.pageYOffset;
@@ -249,7 +244,6 @@
             });
         });
 
-        // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -260,7 +254,6 @@
             });
         });
 
-        // Update active sub-nav link on scroll
         window.addEventListener('scroll', () => {
             let current = '';
             document.querySelectorAll('section').forEach(section => {
@@ -270,7 +263,6 @@
                 }
             });
 
-            // Update sub-nav active state
             document.querySelectorAll('.portfolio-nav a').forEach(link => {
                 link.classList.remove('active');
                 if (link.getAttribute('href') === '#' + current) {
@@ -278,10 +270,6 @@
                 }
             });
         });
-
-        // ==========================================
-        // Routes Management System
-        // ==========================================
         
         const STORAGE_KEY = 'morris_trailrunning_routes';
         
@@ -322,28 +310,23 @@
             }
         ];
 
-        // Load routes from localStorage
         function loadRoutes() {
             const stored = localStorage.getItem(STORAGE_KEY);
             if (stored) {
                 return JSON.parse(stored);
             }
-            // First time: initialize with default routes
             saveRoutes(defaultRoutes);
             return defaultRoutes;
         }
 
-        // Save routes to localStorage
         function saveRoutes(routes) {
             localStorage.setItem(STORAGE_KEY, JSON.stringify(routes));
         }
 
-        // Generate unique ID
         function generateId() {
             return 'route-' + Date.now() + '-' + Math.random().toString(36).substr(2, 9);
         }
 
-        // Get difficulty badge class and emoji
         function getDifficultyInfo(difficulty) {
             switch(difficulty) {
                 case 'Einfach': return { class: 'difficulty-easy', emoji: '🟢' };
@@ -353,7 +336,6 @@
             }
         }
 
-        // Render all routes
         function renderRoutes() {
             const routes = loadRoutes();
             const grid = document.getElementById('routesGrid');
@@ -411,7 +393,6 @@
             }).join('');
         }
 
-        // Add new route
         function addRoute(routeData) {
             const routes = loadRoutes();
             const newRoute = {
@@ -419,12 +400,11 @@
                 ...routeData,
                 isDefault: false
             };
-            routes.unshift(newRoute); // Add to beginning
+            routes.unshift(newRoute); 
             saveRoutes(routes);
             renderRoutes();
         }
 
-        // Delete route
         function deleteRoute(id) {
             if (!confirm('Möchtest du diese Route wirklich löschen?')) return;
             
@@ -434,7 +414,6 @@
             renderRoutes();
         }
 
-        // Clear all routes
         function clearAllRoutes() {
             if (!confirm('Möchtest du wirklich ALLE Routen löschen? Diese Aktion kann nicht rückgängig gemacht werden.')) return;
             
@@ -442,7 +421,6 @@
             renderRoutes();
         }
 
-        // Reset to default routes
         function resetToDefaults() {
             if (!confirm('Alle benutzerdefinierten Routen werden gelöscht und die Standard-Routen wiederhergestellt. Fortfahren?')) return;
             
@@ -450,7 +428,6 @@
             renderRoutes();
         }
 
-        // Form submission handler
         document.getElementById('routeForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
@@ -467,14 +444,11 @@
             addRoute(formData);
             this.reset();
             
-            // Scroll to routes list
             document.getElementById('routesGrid').scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
 
-        // Clear all button handler
         document.getElementById('clearAllRoutes').addEventListener('click', clearAllRoutes);
 
-        // Initialize routes on page load
         document.addEventListener('DOMContentLoaded', renderRoutes);
     </script>
 </body>
